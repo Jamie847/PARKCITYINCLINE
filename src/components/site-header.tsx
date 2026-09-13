@@ -41,7 +41,9 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        solid ? "bg-snow/95 shadow-sm backdrop-blur" : "bg-transparent",
+        solid
+          ? "border-b border-ink/10 bg-[#fff7ec] shadow-sm"
+          : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
