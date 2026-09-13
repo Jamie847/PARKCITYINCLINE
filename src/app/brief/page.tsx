@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ruledOut, sites } from "@/lib/locations";
+import { manitouLinks } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Council briefing — Manitou evidence and siting",
@@ -30,6 +31,23 @@ export default function BriefPage() {
         <section className="mt-12">
           <h2 className="font-display text-3xl">The Manitou evidence</h2>
           <div className="mt-4 space-y-4 text-sm leading-7 text-forest/80">
+            <p>
+              Official pages for the original, if you have not climbed it:{" "}
+              {manitouLinks.map((item, index) => (
+                <span key={item.href}>
+                  {index > 0 ? " · " : ""}
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-mid underline underline-offset-4"
+                  >
+                    {item.label.split(" — ")[0]}
+                  </a>
+                </span>
+              ))}
+              .
+            </p>
             <p>
               <strong>It was never designed as a trail.</strong> The Incline is
               a former Mt. Manitou Scenic Railway / water-works cable grade.
