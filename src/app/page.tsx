@@ -1,84 +1,89 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mountain, Shield, TrainFront, Trees } from "lucide-react";
+import { SiteDiagram } from "@/components/site-diagram";
+import { SubscribeForm } from "@/components/subscribe-form";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ruledOut, sites } from "@/lib/locations";
 import {
-  campaign,
-  councilCase,
-  manitouFacts,
-  operations,
+  designFeatures,
+  locationStats,
+  manitouStats,
+  partners,
+  site,
   stats,
-  timeline,
-  vailCase,
-} from "@/lib/content";
+} from "@/lib/site";
 
 export default function Home() {
   return (
-    <>
+    <div id="top">
       <Hero />
       <Stats />
-      <Vision />
+      <Inspiration />
+      <Design />
       <Location />
+      <Siting />
       <Partners />
-      <Town />
-      <Operations />
-      <Compare />
-      <Path />
-      <Close />
-    </>
+      <Support />
+    </div>
   );
 }
 
 function Hero() {
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden">
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-forest">
       <Image
-        src="/images/hero-park-city-incline.png"
-        alt="Concept visualization of a steep outdoor staircase rising from Park City Mountain toward the Wasatch ridgeline"
+        src="/images/hero-dual-stairs.png"
+        alt="Concept of a dual-lane staircase climbing a Park City ski run"
         fill
         priority
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0c1410] via-[#0c1410]/55 to-[#0c1410]/25" />
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 sm:pb-20">
-        <p className="text-xs tracking-[0.28em] text-copper uppercase">
-          A civic campaign for Park City · Vail Resorts land
-        </p>
-        <h1 className="font-display mt-5 max-w-4xl text-5xl leading-[0.95] tracking-tight text-balance sm:text-7xl lg:text-8xl">
-          {campaign.tagline}
+      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest/35" />
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-24 pt-28 sm:px-6">
+        <p className="text-xs tracking-[0.28em] text-gold uppercase">{site.badge}</p>
+        <h1 className="font-display mt-4 text-5xl leading-[0.95] text-snow sm:text-7xl lg:text-8xl">
+          The <span className="text-gold">Park City</span> Incline
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/85 sm:text-xl">
-          {campaign.lede}
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-snow/85 sm:text-xl">
+          {site.heroSubhead}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button render={<Link href="/endorse" />} className="h-12 px-6 text-base">
-            Add your name
-            <ArrowRight className="size-4" />
+          <Button
+            render={<Link href="#support" />}
+            className="h-12 bg-gold px-6 text-base font-semibold text-forest hover:bg-gold/90"
+          >
+            Support the effort
           </Button>
           <Button
-            render={<Link href="/the-case" />}
+            render={<Link href="#inspiration" />}
             variant="outline"
-            className="h-12 border-white/20 bg-black/20 px-6 text-base text-foreground backdrop-blur-sm"
+            className="h-12 border-snow/40 bg-transparent px-6 text-base text-snow hover:bg-snow/10"
           >
-            Read the case
+            Learn more
           </Button>
         </div>
       </div>
+      <svg
+        className="absolute inset-x-0 bottom-0 h-16 w-full text-snow"
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        <path fill="currentColor" d="M0 80 L0 40 C 240 80 480 0 720 28 C 960 56 1200 8 1440 40 L1440 80 Z" />
+      </svg>
     </section>
   );
 }
 
 function Stats() {
   return (
-    <section className="border-y border-white/10 bg-[#101810]">
+    <section className="bg-forest">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
         {stats.map((item) => (
           <div key={item.label}>
-            <p className="font-display text-4xl text-copper sm:text-5xl">{item.value}</p>
-            <p className="mt-2 text-sm font-medium">{item.label}</p>
-            <p className="mt-1 text-sm leading-6 text-foreground/65">{item.detail}</p>
+            <p className="font-display text-4xl text-gold sm:text-5xl">{item.value}</p>
+            <p className="mt-2 text-sm text-snow/80">{item.label}</p>
           </div>
         ))}
       </div>
@@ -86,54 +91,88 @@ function Stats() {
   );
 }
 
-function Vision() {
+function Inspiration() {
   return (
-    <section id="vision" className="scroll-mt-24 px-4 py-20 sm:px-6 sm:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-        <div>
-          <p className="text-xs tracking-[0.24em] text-copper uppercase">The idea</p>
-          <h2 className="font-display mt-3 text-4xl leading-tight text-balance sm:text-5xl">
-            Manitou proved the product. Park City has the better stage.
-          </h2>
-          <div className="mt-6 space-y-4 text-base leading-7 text-foreground/78">
-            <p>
-              Colorado’s Manitou Incline is 2,768 uneven steps and about 2,000
-              vertical feet in less than a mile. It is extreme, famous, and —
-              even after reservations, shuttles, and neighborhood fights — still
-              one of the most visited outdoor workouts in the mountain West.
-            </p>
-            <p>
-              Park City can build our own version at the base of Park City
-              Mountain, on land Vail Resorts already operates. Not a gym. Not a
-              hotel stairwell. A public-facing timber-and-stone climb that
-              starts where Town Lift, transit, and Main Street already meet.
-            </p>
-            <p>
-              The Civic Futures brief calls it the Challenge Incline: 2,744
-              steps, 2,000 feet, community capital first, City and resort as
-              partners. This site is how we take that idea out of a document and
-              put it in front of the people who can say yes.
-            </p>
+    <section id="inspiration" className="scroll-mt-20 bg-snow px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-xs tracking-[0.24em] text-light uppercase">The inspiration</p>
+        <h2 className="font-display mt-3 text-4xl text-forest sm:text-5xl">
+          What is the Manitou Incline?
+        </h2>
+        <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-forest/80">
+          <p>
+            The Manitou Incline began as a cable-car grade built to haul pipe
+            up Pikes Peak. After a 1990 rockslide killed the railway, the ties
+            stayed. Locals started climbing them. For twenty years it was
+            technically trespassing — and still drew an estimated 350,000 to
+            500,000 trips a year.
+          </p>
+          <p>
+            Colorado Springs and Manitou Springs spent a decade turning that
+            unofficial staircase into a legal public trail. They opened it in
+            2013 through an intergovernmental agreement: one city runs the
+            trail, the other manages the parking. Visit Manitou Springs still
+            cites about 250,000 Incline visitors a year. Trail counters in the
+            reservation era have recorded on the order of a quarter-million
+            climbs in a single eleven-month window.
+          </p>
+          <p>
+            That volume is why a town of roughly 5,000 people can point to
+            tourism for about half of its tax revenue — $6.2 million in 2024,
+            about $2,600 saved per local household. The Incline is not the only
+            reason visitors come. It is the reason a certain kind of visitor
+            comes, spends three hours, and then eats and drinks on the street
+            at the bottom.
+          </p>
+        </div>
+        <div className="mt-10 rounded-2xl bg-sky p-6 sm:p-8">
+          <p className="text-xs tracking-[0.2em] text-mid uppercase">Manitou, in numbers</p>
+          <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {manitouStats.map((item) => (
+              <div key={item.label}>
+                <p className="font-display text-3xl text-forest">{item.value}</p>
+                <p className="mt-1 text-sm text-forest/70">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl sm:mt-10">
-            <Image
-              src="/images/climbers-incline.png"
-              alt="Athletes climbing a steep wooden incline at sunrise"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
+        <p className="mt-8 max-w-3xl text-base leading-8 text-forest/80">
+          Park City already has the mountain, the altitude, the Olympic brand,
+          and a Main Street that knows how to catch a tired crowd. What we do
+          not have is the one piece of outdoor infrastructure that turned a
+          former rail grade into a year-round identity. That is the Park City
+          Incline.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Design() {
+  return (
+    <section id="design" className="scroll-mt-20 bg-forest px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="font-display max-w-3xl text-4xl text-snow sm:text-5xl">
+          Bigger. Smarter. Built for purpose.
+        </h2>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {designFeatures.map((item, index) => (
+            <article key={item.title} className="rounded-2xl bg-mid/40 p-6 ring-1 ring-white/10">
+              <p className="font-mono text-xs text-gold">0{index + 1}</p>
+              <h3 className="font-display mt-2 text-2xl text-snow">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-snow/75">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/steps-dual-lane.png" alt="Dual-lane timber and stone steps" fill className="object-cover" sizes="33vw" />
           </figure>
-          <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-            <Image
-              src="/images/steps-detail.png"
-              alt="Weathered timber steps, granite, and alpine wildflowers"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/summit-overlook-park.png" alt="Summit overlook park concept" fill className="object-cover" sizes="33vw" />
+          </figure>
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/winter-uphill.png" alt="Winter uphill ski use on the corridor" fill className="object-cover" sizes="33vw" />
           </figure>
         </div>
       </div>
@@ -143,68 +182,85 @@ function Vision() {
 
 function Location() {
   return (
-    <section className="paper-section px-4 py-20 sm:px-6 sm:py-28">
+    <section id="location" className="topo-bg scroll-mt-20 px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <p className="text-xs tracking-[0.24em] text-[#8a6a32] uppercase">
-            Why this mountain
+        <p className="text-xs tracking-[0.24em] text-gold uppercase">Where it goes</p>
+        <h2 className="font-display mt-3 text-4xl text-snow sm:text-5xl">One run. Perfect for it.</h2>
+        <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-snow/80">
+          <p>
+            Payday drops from mid-mountain toward the Park City Mountain Village
+            lodge on a near-straight fall line. The Village sits at about 6,900
+            feet. A 2,000-foot climb from that doorstep is the product: no
+            switchback hike to the start, no new trailhead carved into a
+            neighborhood.
           </p>
-          <h2 className="font-display mt-3 text-4xl leading-tight text-[#1c1810] sm:text-5xl">
-            The base of Park City Mountain is already the start line.
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-[#3a3226]">
-            PCMR rises from 6,900 feet to just over 10,000. Mountain Village
-            sits against historic Main Street. Town Lift, free transit, and
-            summer hiking already exist. We do not need a new wilderness
-            wound. We need a dedicated step corridor on resort fall line, a
-            required descent trail, and the humility to copy Manitou’s
-            operations — not its traffic mistakes.
+          <p>
+            The main parking lot is a three-minute flat walk to the first step.
+            Restrooms and food are already there. The line is visible from town,
+            from the lodge, and from the lift. In winter the same corridor
+            becomes a dedicated uphill / skinning lane for a community that is
+            already climbing this mountain before the chairs spin.
+          </p>
+          <p>
+            That is why this site leads with Park City base — not because it is
+            the only mountain, but because it is the only site that already
+            solved parking and still finishes toward Main Street.
           </p>
         </div>
-        <div className="mt-12 grid gap-4 lg:grid-cols-5">
-          <figure className="relative min-h-72 overflow-hidden rounded-2xl lg:col-span-3">
-            <Image
-              src="/images/mountain-village-base.png"
-              alt="Aerial concept of Park City Mountain Village in summer"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
-          </figure>
-          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">
-            {[
-              {
-                icon: Mountain,
-                title: "Resort terrain",
-                body: "A ski fall line Vail already grades, snowmakes, and staffs.",
-              },
-              {
-                icon: TrainFront,
-                title: "Town Lift + transit",
-                body: "Arrive without parking on a residential street.",
-              },
-              {
-                icon: Trees,
-                title: "Least new disturbance",
-                body: "Use a corridor that is already a run, not a ridgeline.",
-              },
-              {
-                icon: Shield,
-                title: "Operable from day one",
-                body: "Hours, waivers, and capacity are lift-ops problems PCMR knows.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl bg-white/70 p-5 ring-1 ring-[#1c1810]/8"
-              >
-                <item.icon className="size-5 text-[#8a6a32]" />
-                <p className="mt-3 font-medium text-[#1c1810]">{item.title}</p>
-                <p className="mt-1 text-sm leading-6 text-[#4a4032]">{item.body}</p>
+        <div className="mt-10 rounded-2xl border border-gold bg-forest/70 p-6 sm:p-8">
+          <p className="font-display text-2xl text-gold">Payday Run — Park City Mountain Village Base</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {locationStats.map((item) => (
+              <div key={item.label}>
+                <p className="font-display text-2xl text-snow">{item.value}</p>
+                <p className="mt-1 text-sm text-snow/65">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          <figure className="relative min-h-72 overflow-hidden rounded-2xl">
+            <Image
+              src="/images/aerial-payday.png"
+              alt="Aerial concept of a dual-lane staircase on a Park City ski run"
+              fill
+              className="object-cover"
+              sizes="50vw"
+            />
+          </figure>
+          <SiteDiagram />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Siting() {
+  return (
+    <section className="bg-sky px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-xs tracking-[0.24em] text-mid uppercase">If the first door closes</p>
+        <h2 className="font-display mt-3 text-3xl text-forest sm:text-4xl">
+          Three sites with parking. One we will not pick a fight over.
+        </h2>
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {sites.map((item) => (
+            <article key={item.id} className="rounded-2xl bg-white p-6 shadow-sm">
+              <p className="text-xs tracking-[0.18em] text-light uppercase">{item.rank}</p>
+              <h3 className="font-display mt-2 text-2xl">{item.name}</h3>
+              <p className="mt-3 text-sm leading-7 text-forest/75">{item.why}</p>
+              <p className="mt-4 text-xs leading-6 text-forest/55">
+                Land: {item.land}. Parking: {item.parking}.
+              </p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-6 text-sm leading-7 text-forest/70">
+          <strong>{ruledOut.name} is not on this list.</strong> {ruledOut.why}{" "}
+          <Link href="/brief" className="font-medium text-mid underline underline-offset-4">
+            Read the siting brief
+          </Link>
+        </p>
       </div>
     </section>
   );
@@ -212,112 +268,24 @@ function Location() {
 
 function Partners() {
   return (
-    <section id="partners" className="scroll-mt-24 px-4 py-20 sm:px-6 sm:py-28">
+    <section id="partners" className="scroll-mt-20 bg-snow px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] text-copper uppercase">
-          Two rooms that matter
-        </p>
-        <h2 className="font-display mt-3 max-w-3xl text-4xl leading-tight sm:text-5xl">
-          One proposal. Two audiences. The same mountain.
+        <h2 className="font-display text-4xl text-forest sm:text-5xl">
+          Built with Park City, not just for it
         </h2>
-        <Tabs defaultValue="council" className="mt-10">
-          <TabsList className="h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0">
-            <TabsTrigger
-              value="council"
-              className="h-11 rounded-full border border-white/15 px-5 data-active:border-copper data-active:bg-copper data-active:text-copper-foreground"
-            >
-              For City Council
-            </TabsTrigger>
-            <TabsTrigger
-              value="vail"
-              className="h-11 rounded-full border border-white/15 px-5 data-active:border-copper data-active:bg-copper data-active:text-copper-foreground"
-            >
-              For Vail Resorts
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="council" className="mt-8">
-            <CaseGrid items={councilCase} />
-          </TabsContent>
-          <TabsContent value="vail" className="mt-8">
-            <CaseGrid items={vailCase} />
-          </TabsContent>
-        </Tabs>
-        <div className="mt-10">
-          <Button render={<Link href="/the-case" />} variant="outline" className="h-11 px-5">
-            Open the full briefing
-            <ArrowRight className="size-4" />
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CaseGrid({
-  items,
-}: {
-  items: readonly { title: string; body: string }[];
-}) {
-  return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {items.map((item) => (
-        <article
-          key={item.title}
-          className="rounded-2xl border border-white/10 bg-white/4 p-6"
-        >
-          <h3 className="font-display text-2xl leading-snug">{item.title}</h3>
-          <p className="mt-3 text-sm leading-7 text-foreground/72">{item.body}</p>
-        </article>
-      ))}
-    </div>
-  );
-}
-
-function Town() {
-  return (
-    <section className="relative isolate overflow-hidden">
-      <div className="relative min-h-[28rem]">
-        <Image
-          src="/images/main-street-dusk.png"
-          alt="Historic Park City Main Street at dusk with the mountain immediately behind town"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1410] via-[#0c1410]/75 to-[#0c1410]/25" />
-        <div className="relative mx-auto flex min-h-[28rem] max-w-6xl items-center px-4 py-16 sm:px-6">
-          <blockquote className="max-w-xl">
-            <p className="font-display text-3xl leading-tight sm:text-4xl">
-              The climb is on the mountain. The win is on Main Street.
-            </p>
-            <p className="mt-5 text-base leading-7 text-foreground/80">
-              Manitou’s Incline is famous because it dumps spent, hungry people
-              into a small town. Park City already has that town. An Incline at
-              PCMR is a shoulder-season Main Street project wearing trail shoes.
-            </p>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Operations() {
-  return (
-    <section className="border-y border-white/10 bg-[#101810] px-4 py-20 sm:px-6 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] text-copper uppercase">
-          How it would actually run
+        <p className="mt-5 max-w-3xl text-base leading-8 text-forest/80">
+          This project works because it serves every stakeholder at once. The
+          resort gains a year-round activation that drives off-season
+          visitation. The city gains a free public amenity that strengthens
+          Park City’s identity as a world-class outdoor destination. The
+          community gains a trail that belongs to everyone — no ticket, no
+          reservation, no fee.
         </p>
-        <h2 className="font-display mt-3 max-w-3xl text-4xl leading-tight sm:text-5xl">
-          Copy the climb. Do not copy the congestion.
-        </h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {operations.map((item, index) => (
-            <article key={item.title} className="border-t border-copper/40 pt-5">
-              <p className="font-mono text-xs text-copper/80">0{index + 1}</p>
-              <h3 className="mt-2 font-display text-2xl">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-foreground/70">{item.body}</p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {partners.map((item) => (
+            <article key={item.title} className="rounded-2xl bg-white p-6 shadow-sm">
+              <h3 className="font-display text-2xl">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-forest/75">{item.body}</p>
             </article>
           ))}
         </div>
@@ -326,105 +294,30 @@ function Operations() {
   );
 }
 
-function Compare() {
+function Support() {
   return (
-    <section className="px-4 py-20 sm:px-6 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] text-copper uppercase">
-          Side by side
+    <section id="support" className="scroll-mt-20 bg-white px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="font-display text-4xl text-forest sm:text-5xl">Be part of the climb</h2>
+        <p className="mt-4 text-base leading-8 text-forest/75">
+          Add your name to the launch list. When the GoFundMe for “Build the
+          Park City Incline” is live, the donate link will sit right here.
         </p>
-        <h2 className="font-display mt-3 text-4xl sm:text-5xl">
-          Manitou, then Park City.
-        </h2>
-        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-white/5 text-xs tracking-wider text-copper uppercase">
-              <tr>
-                <th className="px-4 py-3 font-medium sm:px-6"> </th>
-                <th className="px-4 py-3 font-medium sm:px-6">Manitou Incline</th>
-                <th className="px-4 py-3 font-medium sm:px-6">Park City proposal</th>
-              </tr>
-            </thead>
-            <tbody>
-              {manitouFacts.map((row) => (
-                <tr key={row.label} className="border-t border-white/8">
-                  <td className="px-4 py-3 font-medium sm:px-6">{row.label}</td>
-                  <td className="px-4 py-3 text-foreground/70 sm:px-6">{row.manitou}</td>
-                  <td className="px-4 py-3 text-foreground/90 sm:px-6">{row.parkCity}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-8">
+          <SubscribeForm />
         </div>
-        <p className="mt-4 max-w-3xl text-xs leading-5 text-foreground/50">
-          Manitou figures are from public City of Colorado Springs, Manitou
-          Springs, and regional tourism materials. Visitor counts vary by source
-          (roughly 70,000 to 350,000+ depending on methodology and year). We
-          treat 250,000+ as a commonly cited modern estimate, not a guarantee
-          for Utah.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function Path() {
-  return (
-    <section className="paper-section px-4 py-20 sm:px-6 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <p className="text-xs tracking-[0.24em] text-[#8a6a32] uppercase">The path</p>
-        <h2 className="font-display mt-3 text-4xl text-[#1c1810] sm:text-5xl">
-          We are not asking for a ribbon-cutting. We are asking for a table.
-        </h2>
-        <ol className="mt-12 grid gap-8 md:grid-cols-5">
-          {timeline.map((item) => (
-            <li key={item.phase}>
-              <p className="text-xs tracking-[0.2em] text-[#8a6a32] uppercase">
-                {item.phase}
-              </p>
-              <h3 className="font-display mt-2 text-2xl text-[#1c1810]">{item.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-[#4a4032]">{item.body}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  );
-}
-
-function Close() {
-  return (
-    <section className="relative isolate overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
-      <Image
-        src="/images/summit-overlook.png"
-        alt="Concept of a climber at a summit overlook above Park City"
-        fill
-        className="object-cover"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-[#0c1410]/70" />
-      <div className="relative mx-auto max-w-3xl text-center">
-        <p className="text-xs tracking-[0.24em] text-copper uppercase">The ask</p>
-        <h2 className="font-display mt-4 text-4xl leading-tight sm:text-6xl">
-          Put your name on the stairs before they exist.
-        </h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-foreground/80">
-          Council needs a mandate. Vail needs to see the town is not walking
-          into another fight. One endorsement is a letter. A few hundred is a
-          project.
-        </p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button render={<Link href="/endorse" />} className="h-12 px-6 text-base">
-            Endorse the Incline
-          </Button>
-          <Button
-            render={<Link href="/brief" />}
-            variant="outline"
-            className="h-12 border-white/20 bg-black/25 px-6 text-base"
-          >
-            Print the packet
-          </Button>
-        </div>
+        <p className="mt-3 text-xs text-forest/50">No spam. Just real updates.</p>
+        {site.goFundMeUrl ? (
+          <p className="mt-6">
+            <a href={site.goFundMeUrl} className="font-medium text-mid underline underline-offset-4">
+              Donate to the campaign →
+            </a>
+          </p>
+        ) : (
+          <p className="mt-6 text-sm text-forest/55">
+            Donate to the campaign → GoFundMe launching with a $50,000 seed goal.
+          </p>
+        )}
       </div>
     </section>
   );

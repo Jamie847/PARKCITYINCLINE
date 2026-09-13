@@ -1,42 +1,36 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { campaign } from "@/lib/content";
+import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
+  weight: ["700", "900"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://parkcityincline.com"),
-  title: {
-    default: `${campaign.name} — A Wasatch staircase for Park City`,
-    template: `%s · ${campaign.name}`,
-  },
-  description: campaign.lede,
+  title: "Park City Incline — A Free Step Trail at PCMR",
+  description: site.description,
   openGraph: {
-    title: `${campaign.name} — ${campaign.tagline}`,
-    description: campaign.lede,
-    images: [{ url: "/images/hero-park-city-incline.png" }],
+    title: site.ogTitle,
+    description: site.ogDescription,
+    images: [{ url: "/images/hero-dual-stairs.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: campaign.name,
-    description: campaign.lede,
-    images: ["/images/hero-park-city-incline.png"],
+    title: site.ogTitle,
+    description: site.ogDescription,
+    images: ["/images/hero-dual-stairs.png"],
   },
 };
 
@@ -44,9 +38,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+      <body className="flex min-h-full flex-col bg-snow font-sans text-forest">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

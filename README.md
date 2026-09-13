@@ -1,15 +1,10 @@
 # Park City Incline
 
-A civic campaign site for a Manitou-class outdoor staircase at the base of **Park City Mountain**, on land owned by **Vail Resorts**.
+Single-page civic campaign for a free, purpose-built step trail at Park City Mountain — with a stakeholder briefing at `/brief`.
 
-The site is built to walk into two rooms:
+This is a community initiative. It is not an official City of Park City or Vail Resorts project.
 
-- **Park City Council** — a mandate, a packet, and a scoped ask (study + convene, not a blank check).
-- **Vail Resorts / Park City Mountain** — a year-round product on terrain they already operate, with community goodwill attached.
-
-This is a citizen proposal. It is not an official City or Vail project.
-
-## Run locally
+## Run
 
 ```bash
 npm install
@@ -18,48 +13,26 @@ npm run dev
 
 Open [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
-```bash
-npm run build
-npm start
-```
+## Should you buy a domain?
 
-## What’s on the site
-
-- Home: vision, location, Council / Vail arguments, operations, Manitou comparison
-- `/the-case` — longer briefing
-- `/brief` — printable Council packet
-- `/endorse` — name, letter to Council, email to the campaign
-- `/faq` — traffic, land, cost, winter ops
-
-Concept images live in `public/images/`. They are visualizations, not photos of an existing trail.
+**Yes. Buy `parkcityincline.com` now.** `.org` is a fine redirect, not the primary. Council and Vail will forward a link; a GoDaddy parking page or a random `.vercel.app` undercuts the “serious civic infrastructure” brief. Register it this week even if DNS waits a few days.
 
 ## Framer or Render?
 
-**Ship this Next.js site on Render (or Vercel). Do not rebuild it in Framer first.**
+Stay on this Next.js site. The work order suggested Framer for a no-dev launch. You already have a spec-built page, email capture, a printable briefing, and a GitHub repo (`Jamie847/PARKCITYINCLINE`). Recreating it in Framer costs time you do not have.
 
-| | **This codebase + Render** | **Framer** |
-|---|---|---|
-| Launch this week | Yes. The site is already built. | You would redesign every page by hand. |
-| Edits with Cursor | Native. Copy, pages, forms, print styles. | Poor. Framer is a closed visual canvas. |
-| Custom domain | Point DNS at Render when you buy it. | Also easy, after you recreate the site. |
-| Non-designer editing | You change copy in files, or we do it together. | Better if a marketer wants to drag boxes weekly. |
-| Cost | Render free/starter web service is enough. | Framer Site plan, plus you still need hosting. |
-| Campaign tools | Endorsement letter, printable packet, SEO. | Possible, slower to customize. |
+**Launch path**
 
-Framer is a good **later** tool if a designer wants a fully visual CMS and nobody is touching the repo. It is a worse **now** tool: we would throw away a working civic site to rebuild it in a closed editor you cannot iterate on from this project.
+1. Buy `parkcityincline.com`.
+2. Push this build to `https://github.com/Jamie847/PARKCITYINCLINE` (this cloud session cannot write to GitHub until you add a token or reconnect GitHub).
+3. Connect that repo to **Render** (web service: `npm run build` / `npm run start`) or Vercel.
+4. Point the domain at the host.
+5. Create Mailchimp list `PCI Launch` and a GoFundMe named **Build the Park City Incline** ($50,000 seed). Drop keys into `.env` from `.env.example`.
 
-**Recommended launch path**
+## What’s on the site
 
-1. Keep developing here.
-2. Create a public GitHub repo (the Create repo control in the agent view).
-3. Connect that repo to Render as a **Web Service**:
-   - Build: `npm install && npm run build`
-   - Start: `npm run start`
-   - Bind is already `0.0.0.0` via Next.js
-4. When you have a domain (`parkcityincline.com`, `pcincline.org`, etc.), add it in Render → Custom Domains.
+- Work-order homepage: hero, stats, Manitou, design, Payday location, partners, email + donate
+- `/brief` — Manitou evidence and the PCMR / Canyons / UOP siting memo
+- Concept images in `public/images/` (swap with Nano Banana Pro anytime)
 
-A `render.yaml` is in the repo for that step.
-
-## Contact
-
-Jamie Murray · jamescmurray33@gmail.com · 847-736-1954
+No personal names appear on the public site.
