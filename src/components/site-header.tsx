@@ -2,15 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -25,15 +17,26 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "bg-forest/95 shadow-sm backdrop-blur" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        scrolled || open ? "bg-forest shadow-sm" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/#top" className="font-display text-lg text-snow sm:text-xl">
+        <Link
+          href="/#top"
+          className="font-display text-lg text-snow sm:text-xl"
+          onClick={() => setOpen(false)}
+        >
           {site.name}
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -46,38 +49,49 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Button render={<Link href="#support" />} className="h-10 bg-gold px-4 font-semibold text-forest hover:bg-gold/90">
-            Support the effort
-          </Button>
-        </nav>
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger
-            className="inline-flex size-10 items-center justify-center rounded-lg border border-white/20 text-snow md:hidden"
-            aria-label="Open menu"
+          <Link
+            href="#support"
+            className="inline-flex h-10 items-center rounded-lg bg-gold px-4 text-sm font-semibold text-forest hover:bg-gold/90"
           >
-            <Menu className="size-5" />
-          </SheetTrigger>
-          <SheetContent className="bg-forest text-snow">
-            <SheetHeader>
-              <SheetTitle className="font-display text-left text-2xl text-snow">
-                {site.name}
-              </SheetTitle>
-            </SheetHeader>
-            <div className="mt-6 flex flex-col gap-4 px-4">
-              {nav.map((item) => (
+            Support the effort
+          </Link>
+        </nav>
+        <button
+          type="button"
+          className="inline-flex size-10 items-center justify-center rounded-lg border border-white/20 text-snow md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
+      </div>
+      {open ? (
+        <nav className="border-t border-white/10 bg-forest px-4 py-6 md:hidden">
+          <ul className="flex flex-col gap-4">
+            {nav.map((item) => (
+              <li key={item.href}>
                 <Link
-                  key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display text-2xl"
+                  className="font-display text-2xl text-snow"
                 >
                   {item.label}
                 </Link>
-              ))}
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="#support"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-12 items-center rounded-lg bg-gold px-5 font-semibold text-forest"
+              >
+                Support the effort
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      ) : null}
     </header>
   );
 }

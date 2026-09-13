@@ -3,7 +3,6 @@
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { site } from "@/lib/site";
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("");
@@ -64,10 +63,7 @@ export function SubscribeForm() {
         {status === "loading" ? "Adding…" : "Count me in"}
       </Button>
       {message ? (
-        <p className="w-full text-sm text-destructive sm:hidden">{message}</p>
-      ) : null}
-      {site.goFundMeUrl ? (
-        <span className="sr-only">Donate available</span>
+        <p className="w-full basis-full text-sm text-destructive">{message}</p>
       ) : null}
     </form>
   );
