@@ -9,17 +9,8 @@ import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const onHome = pathname === "/";
-  const solid = !onHome || scrolled || open;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,19 +31,15 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        solid
-          ? "border-b border-ink/10 bg-[#fff7ec] shadow-sm"
-          : "bg-transparent",
+        "site-header fixed inset-x-0 top-0 z-50",
+        onHome && "site-header-home",
+        open && "site-header-open",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/#top"
-          className={cn(
-            "font-display text-lg sm:text-xl",
-            solid ? "text-ink" : "text-snow",
-          )}
+          className="font-display text-lg text-current sm:text-xl"
           onClick={() => setOpen(false)}
         >
           {site.name}
@@ -62,10 +49,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href.startsWith("#") ? `/${item.href}` : item.href}
-              className={cn(
-                "text-sm font-medium transition-colors",
-                solid ? "text-ink/70 hover:text-ink" : "text-snow/85 hover:text-gold",
-              )}
+              className="text-sm font-medium text-current/75 transition-colors hover:text-current"
             >
               {item.label}
             </Link>
@@ -79,10 +63,7 @@ export function SiteHeader() {
         </nav>
         <button
           type="button"
-          className={cn(
-            "inline-flex size-10 items-center justify-center rounded-full border md:hidden",
-            solid ? "border-ink/15 text-ink" : "border-white/30 text-snow",
-          )}
+          className="inline-flex size-10 items-center justify-center rounded-full border border-current/25 text-current md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -91,14 +72,14 @@ export function SiteHeader() {
         </button>
       </div>
       {open ? (
-        <nav className="border-t border-ink/10 bg-snow px-4 py-6 md:hidden">
+        <nav className="border-t border-[#12352c]/10 bg-[#fff7ec] px-4 py-6 text-[#12352c] md:hidden">
           <ul className="flex flex-col gap-4">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href.startsWith("#") ? `/${item.href}` : item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display text-2xl text-ink"
+                  className="font-display text-2xl text-[#12352c]"
                 >
                   {item.label}
                 </Link>

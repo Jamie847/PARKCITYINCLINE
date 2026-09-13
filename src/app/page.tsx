@@ -38,7 +38,10 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden bg-forest">
+    <section
+      id="hero"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-forest"
+    >
       <Image
         src="/images/hero-dual-stairs.jpg"
         alt="Concept of a dual-lane staircase climbing a Park City ski run"
