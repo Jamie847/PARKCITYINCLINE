@@ -114,7 +114,69 @@ export const designImages = [
   },
 ] as const;
 
+export const manitouFacts = [
+  {
+    value: "250,000",
+    label: "Visit Manitou’s annual estimate",
+    detail: "The tourism bureau’s public figure for Incline visitors, ages 7 to 70.",
+  },
+  {
+    value: "197,000",
+    label: "Climbs counted through July 2025",
+    detail: "City eco-counters — not a marketing round-up. July 2025 alone was 48,645.",
+  },
+  {
+    value: "~3 hrs",
+    label: "Typical visit, not a drive-by",
+    detail: "Most people take about three hours round trip. That is lunch-and-a-beer time.",
+  },
+  {
+    value: "1,125",
+    label: "Daily summer cap in Manitou",
+    detail: "45 starts each half hour. They throttle demand. Dual lanes would not have to.",
+  },
+] as const;
+
+export const economyReasons = [
+  {
+    title: "Park City is a bigger stage",
+    body: "Manitou Springs is a town of about 5,000. Park City already draws destination visitors through SLC, the Epic Pass, and an Olympic brand. We would not be inventing tourism. We would be giving shoulder-season guests a three-hour reason to stay and spend.",
+  },
+  {
+    title: "Manitou is throttled. We would not have to be.",
+    body: "The original is one lane up, walk down Barr Trail, reservation required. July still cleared 48,000 climbs. Two purpose-built lanes, existing Village lots, and no neighborhood street fight is how you get similar numbers — or more — without repeating Ruxton Avenue.",
+  },
+  {
+    title: "The spend is after the last step",
+    body: "The stairs are free. The economy is coffee, lunch, a beer, a shirt, a hotel night if they flew. Visit Manitou reports tourism made about $6.2 million in city tax in 2024 — half their tax take. That is the whole visitor economy, not an Incline receipt. The transferable fact is the visit shape: hard climb, then town.",
+  },
+] as const;
+
+export const eventIdeas = [
+  {
+    title: "The everyday product",
+    body: "365 days of locals at dawn and visitors at 10 a.m. is the business. Manitou’s money is not a festival weekend. It is a staircase that is always on.",
+  },
+  {
+    title: "First-responder and charity climbs",
+    body: "Colorado Springs closes the Incline one morning a year for a Firefighter Climb on 9/11. Park City could host the same — plus school, nonprofit, and wounded-warrior days — without turning the trail into a ticketed carnival.",
+  },
+  {
+    title: "Winter uphill series",
+    body: "People already skin this mountain. A marked corridor is a race series, a training lane, and a reason the Village is busy on a bluebird Tuesday in March.",
+  },
+  {
+    title: "2034 and the FKT crowd",
+    body: "Manitou is a known workout for Olympic and endurance athletes. Fastest-known-time culture, college teams, and a 2034 training story are events that do not need a finish-line arch on Main Street.",
+  },
+] as const;
+
 export const manitouLinks = [
+  {
+    href: "https://manitousprings.org/where-to-play/manitou-incline/",
+    label: "Visit Manitou Springs — Incline facts",
+    note: "Their 250,000-visitor estimate and the three-hour visit",
+  },
   {
     href: "https://coloradosprings.gov/parks-recreation-and-cultural-services/page/manitou-incline",
     label: "City of Colorado Springs — official Incline page",
@@ -180,7 +242,7 @@ export const questions = [
 export const nav = [
   { href: "#what", label: "What" },
   { href: "#why", label: "Why" },
+  { href: "#economy", label: "Payoff" },
   { href: "#where", label: "Where" },
-  { href: "#questions", label: "Questions" },
   { href: "#support", label: "Add your name" },
 ] as const;

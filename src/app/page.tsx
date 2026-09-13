@@ -7,7 +7,10 @@ import { ruledOut } from "@/lib/locations";
 import {
   designFeatures,
   designImages,
+  economyReasons,
+  eventIdeas,
   locationStats,
+  manitouFacts,
   manitouLinks,
   manitouStats,
   questions,
@@ -24,6 +27,7 @@ export default function Home() {
       <Story />
       <Inspiration />
       <Why />
+      <Economy />
       <Design />
       <Location />
       <Questions />
@@ -274,6 +278,69 @@ function Why() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Economy() {
+  return (
+    <section id="economy" className="scroll-mt-24 bg-forest px-4 py-20 text-snow sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-sm font-semibold tracking-[0.2em] text-gold uppercase">
+          Not an expense
+        </p>
+        <h2 className="font-display mt-3 max-w-3xl text-4xl sm:text-5xl">
+          Manitou’s staircase is a visitor machine. Ours could be larger.
+        </h2>
+        <p className="mt-5 max-w-3xl text-base leading-8 text-snow/80">
+          A town of about 5,000 people hosts a free climb that their tourism
+          bureau puts at 250,000 visitors a year. City trail counters logged
+          about 197,000 climbs in the first seven months of 2025 — 48,645 in
+          July alone. Those are Manitou’s numbers, with one uphill lane and a
+          daily cap. They are not a Park City forecast. They are the proof that
+          this is economic infrastructure.
+        </p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {manitouFacts.map((item) => (
+            <article key={item.label} className="rounded-[1.4rem] bg-ink/40 p-5 ring-1 ring-gold/40">
+              <p className="font-display text-3xl text-gold">{item.value}</p>
+              <p className="mt-2 text-sm font-semibold text-snow">{item.label}</p>
+              <p className="mt-2 text-sm leading-6 text-snow/65">{item.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {economyReasons.map((item) => (
+            <article key={item.title} className="rounded-[1.4rem] bg-snow p-6 text-ink">
+              <h3 className="font-display text-2xl">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-ink/70">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <h3 className="font-display mt-14 text-3xl text-gold">What you can run on it</h3>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-snow/75">
+          Manitou already closes the stairs one morning a year for a firefighter
+          climb, and shuts them for Pikes Peak race weekend. The rest of the
+          year the “event” is the climb itself. Park City can do both — and
+          winter, which Manitou barely has.
+        </p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {eventIdeas.map((item) => (
+            <article key={item.title} className="rounded-[1.4rem] bg-ink/35 p-6">
+              <h4 className="font-display text-xl text-gold">{item.title}</h4>
+              <p className="mt-2 text-sm leading-7 text-snow/75">{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-8 max-w-3xl text-xs leading-6 text-snow/50">
+          Sources: Visit Manitou Springs Incline facts page (250,000 estimate;
+          ~3-hour visit); City of Manitou Springs FIRS minutes, 20 Aug 2025
+          (eco-counter Jan–Jul 2025); City of Colorado Springs Incline page
+          (45 starts / half hour); Visit Manitou Springs 2024 annual report
+          (tourism tax, whole visitor economy). Firefighter Incline Climb:
+          Colorado Springs Parks notice, Sept 2025.
+        </p>
       </div>
     </section>
   );

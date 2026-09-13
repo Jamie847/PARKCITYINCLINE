@@ -130,6 +130,19 @@ export default function BriefPage() {
             scenery question. Park City needs its own model before anyone
             quotes a dollar.
           </p>
+          <p className="mt-4 text-sm leading-7 text-forest/80">
+            The climb counts are not fuzzy. Visit Manitou publishes 250,000
+            Incline visitors a year. City eco-counters in the FIRS minutes
+            logged about 197,000 climbs from January through July 2025, with
+            48,645 in July. Manitou caps summer starts at 45 per half hour —
+            1,125 a day — and still prints those months. Dual lanes on a
+            larger destination, next to an airport and an Olympic brand, are
+            why “similar or greater” is a fair working theory. It is not a
+            promise until parking and a landowner are real. Events that
+            already exist there: a firefighter climb each September 11, trail
+            closures for Pikes Peak race weekend, and a year-round FKT /
+            training culture. The everyday product is the one that pays.
+          </p>
         </section>
 
         <section className="mt-12">
