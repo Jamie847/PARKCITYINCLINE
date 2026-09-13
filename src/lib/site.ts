@@ -60,8 +60,8 @@ export const partners = [
     body: "Permitting, public-land coordination, and city endorsement — so this is a civic amenity, not a private attraction with a ticket window.",
   },
   {
-    title: "Park City Park District",
-    body: "Trail stewardship, a maintenance MOU, and a clean connection into the trail network residents already use.",
+    title: "Park City Recreation & trail partners",
+    body: "Stewardship and a maintenance MOU with the departments and nonprofits that already keep local trails open — not a new district invented for this page.",
   },
   {
     title: "The Community",
@@ -71,7 +71,7 @@ export const partners = [
 
 export const locationStats = [
   { value: "~6,900 ft", label: "Base elevation" },
-  { value: "~8,900 ft", label: "Summit target" },
+  { value: "~8,900 ft", label: "Target top (above Payday lift)" },
   { value: "~2,000 ft", label: "Vertical gain" },
   { value: "3 min", label: "Walk from parking" },
 ] as const;

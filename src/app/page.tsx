@@ -48,6 +48,10 @@ function Hero() {
         <p className="mt-5 max-w-2xl text-lg leading-8 text-snow/85 sm:text-xl">
           {site.heroSubhead}
         </p>
+        <p className="mt-4 max-w-xl text-sm leading-6 text-snow/70">
+          A community proposal. Not an approved City of Park City project, and
+          not a Vail Resorts announcement.
+        </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button
             render={<Link href="#support" />}
@@ -300,8 +304,16 @@ function Support() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-display text-4xl text-forest sm:text-5xl">Be part of the climb</h2>
         <p className="mt-4 text-base leading-8 text-forest/75">
-          Add your name to the launch list. When the GoFundMe for “Build the
-          Park City Incline” is live, the donate link will sit right here.
+          Ask one: City Council scopes a public-private conversation. Ask two:
+          Park City Mountain looks at the Payday fall line. Add your email so
+          that mandate is visible. A $50,000 seed — if we raise it — pays for
+          survey, siting, and a Council packet, not construction. The GoFundMe
+          goes here only after there is a place other than a personal bank
+          account for the money to live.{" "}
+          <Link href="/brief" className="font-medium text-mid underline underline-offset-4">
+            See the seed budget
+          </Link>
+          .
         </p>
         <div className="mt-8">
           <SubscribeForm />

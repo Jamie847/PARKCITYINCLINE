@@ -134,6 +134,114 @@ export default function BriefPage() {
         </section>
 
         <section className="mt-12">
+          <h2 className="font-display text-3xl">What $50,000 is for — and what it is not</h2>
+          <p className="mt-4 text-sm leading-7 text-forest/80">
+            A public staircase on ski terrain is a capital project in the
+            millions. Seed money is not that. It is the study that lets
+            Council and the resort say yes or no with a straight face. Until
+            there is a landowner, a permit path, and a fiscal home for the
+            funds, nobody should be raising construction money.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-forest/80">
+            GoFundMe will not hold donations in escrow until a goal is hit.
+            Transfers go to a bank account as they clear. If this campaign
+            raises money, the clean version is a restricted project fund or
+            fiscal sponsor — Park City Community Foundation is the local
+            conversation — so the organizer never parks civic donations in a
+            personal account. A personal GoFundMe can still show demand. It
+            cannot pretend to be a lockbox.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">
+                Proposed $50,000 seed budget
+              </caption>
+              <thead className="bg-sky text-forest">
+                <tr>
+                  <th className="px-5 py-3 font-medium">Seed line</th>
+                  <th className="px-5 py-3 font-medium">Amount</th>
+                  <th className="hidden px-5 py-3 font-medium sm:table-cell">
+                    What it buys
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-forest/10 text-forest/80">
+                <tr>
+                  <td className="px-5 py-3">Survey, GIS, Payday overlay</td>
+                  <td className="px-5 py-3 tabular-nums">$10,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Map the 2,000-ft climb against the ~1,278-ft Payday lift
+                    so the pitch is not a vertical lie.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Concept alignment memo</td>
+                  <td className="px-5 py-3 tabular-nums">$15,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Dual-lane stairs, drainage sketch, winter uphill corridor
+                    — not stamped construction drawings.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Parking and mobility memo</td>
+                  <td className="px-5 py-3 tabular-nums">$6,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Prove the Village lots and transit can absorb climbers
+                    without dumping cars on Old Town streets.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Legal, entity, insurance</td>
+                  <td className="px-5 py-3 tabular-nums">$4,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Who holds money, who speaks to Council, who is on the hook
+                    if someone gets hurt at a site walk.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Visuals and Council packet</td>
+                  <td className="px-5 py-3 tabular-nums">$5,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Aerial overlay, leave-behind brief, meeting materials.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Outreach and operations</td>
+                  <td className="px-5 py-3 tabular-nums">$3,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Domain, list, print, neighborhood meetings.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3">Fees and contingency</td>
+                  <td className="px-5 py-3 tabular-nums">$7,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Platform fees (~2.9% + $0.30) and the lines that always
+                    run over.
+                  </td>
+                </tr>
+                <tr className="font-medium text-forest">
+                  <td className="px-5 py-3">Seed total</td>
+                  <td className="px-5 py-3 tabular-nums">$50,000</td>
+                  <td className="hidden px-5 py-3 sm:table-cell">
+                    Studies and a mandate. Not timber, not concrete.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-sm leading-7 text-forest/80">
+            The later build is a Class 5 concept range — $2 to $5 million —
+            until a survey and geotech exist. Dual-lane stairs at this length,
+            plus drainage, retaining, a summit rest area, a winter corridor,
+            design, and a small maintenance reserve, are why the number is
+            not $750,000. Manitou inherited railroad ties. Park City would be
+            building on purpose. Treat any per-step hardware quote as a
+            fraction of the real job.
+          </p>
+        </section>
+
+        <section className="mt-12">
           <h2 className="font-display text-3xl">How to talk to Vail — and what to do if they pass</h2>
           <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-7">
             <li>
