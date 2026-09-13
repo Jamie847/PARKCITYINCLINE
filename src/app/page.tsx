@@ -34,7 +34,7 @@ function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden bg-forest">
       <Image
-        src="/images/hero-dual-stairs.png"
+        src="/images/hero-dual-stairs.jpg"
         alt="Concept of a dual-lane staircase climbing a Park City ski run"
         fill
         priority
@@ -170,17 +170,50 @@ function Design() {
             </article>
           ))}
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src="/images/steps-dual-lane.png" alt="Dual-lane timber and stone steps" fill className="object-cover" sizes="33vw" />
-          </figure>
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src="/images/summit-overlook-park.png" alt="Summit overlook park concept" fill className="object-cover" sizes="33vw" />
-          </figure>
-          <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image src="/images/winter-uphill.png" alt="Winter uphill ski use on the corridor" fill className="object-cover" sizes="33vw" />
-          </figure>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              src: "/images/steps-dual-lane.jpg",
+              alt: "Concept render: dual-lane stone and timber steps with a center divider rail",
+              caption: "Two lanes, one divider rail",
+            },
+            {
+              src: "/images/base-park.jpg",
+              alt: "Concept render: a trailhead park with seat walls, benches and a restroom at the foot of the stairs",
+              caption: "Trailhead park at the base",
+            },
+            {
+              src: "/images/summit-overlook-park.jpg",
+              alt: "Concept render: a summit overlook deck with benches and a valley view",
+              caption: "Overlook park at the top",
+            },
+            {
+              src: "/images/winter-uphill.jpg",
+              alt: "Concept render: uphill skiers climbing a dedicated winter corridor at sunrise",
+              caption: "Winter uphill corridor",
+            },
+          ].map((image) => (
+            <figure key={image.src}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-2 text-xs text-snow/60">
+                {image.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
+        <p className="mt-6 text-xs leading-6 text-snow/50">
+          Illustrations are concept renders made to show intent. They are not
+          engineered drawings, an approved alignment, or a proposal endorsed by
+          Park City Municipal or the resort.
+        </p>
       </div>
     </section>
   );
@@ -229,7 +262,7 @@ function Location() {
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
           <figure className="relative min-h-72 overflow-hidden rounded-2xl">
             <Image
-              src="/images/aerial-payday.png"
+              src="/images/aerial-payday.jpg"
               alt="Aerial concept of a dual-lane staircase on a Park City ski run"
               fill
               className="object-cover"

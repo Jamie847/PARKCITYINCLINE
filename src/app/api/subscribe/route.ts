@@ -20,36 +20,45 @@ export async function POST(request: Request) {
   const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
   const server = process.env.MAILCHIMP_SERVER_PREFIX;
 
-  if (apiKey && audienceId && server) {
-    const response = await fetch(
-      `https://${server}.api.mailchimp.com/3.0/lists/${audienceId}/members`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${Buffer.from(`any:${apiKey}`).toString("base64")}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email_address: email,
-          status: "subscribed",
-          tags: [body?.list || "PCI Launch"],
-        }),
-      },
+  if (!apiKey || !audienceId || !server) {
+    // Accept the address so the form still works, but say plainly that
+    // nothing was stored — otherwise a smoke test passes while every
+    // signup is silently dropped.
+    console.warn(
+      "[subscribe] Mailchimp env vars missing — address accepted but NOT stored:",
+      email,
     );
-
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => null)) as {
-        title?: string;
-      } | null;
-      if (payload?.title === "Member Exists") {
-        return NextResponse.json({ ok: true, already: true });
-      }
-      return NextResponse.json(
-        { ok: false, error: "Mailchimp could not add that address." },
-        { status: 502 },
-      );
-    }
+    return NextResponse.json({ ok: true, stored: false });
   }
 
-  return NextResponse.json({ ok: true });
+  const response = await fetch(
+    `https://${server}.api.mailchimp.com/3.0/lists/${audienceId}/members`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${Buffer.from(`any:${apiKey}`).toString("base64")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email_address: email,
+        status: "subscribed",
+        tags: [body?.list || "PCI Launch"],
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => null)) as {
+      title?: string;
+    } | null;
+    if (payload?.title === "Member Exists") {
+      return NextResponse.json({ ok: true, already: true, stored: true });
+    }
+    return NextResponse.json(
+      { ok: false, error: "Mailchimp could not add that address." },
+      { status: 502 },
+    );
+  }
+
+  return NextResponse.json({ ok: true, stored: true });
 }

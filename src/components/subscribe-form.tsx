@@ -21,11 +21,20 @@ export function SubscribeForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, list: "PCI Launch" }),
       });
-      const data = (await response.json()) as { ok?: boolean; error?: string };
+      const data = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+        stored?: boolean;
+      };
       if (!response.ok || !data.ok) {
         throw new Error(data.error || "Could not add that email.");
       }
       setStatus("done");
+      setMessage(
+        data.stored === false
+          ? "Received here — the mailing list is not connected yet, so this address was not stored. Check back, or write hello@parkcityincline.com."
+          : "",
+      );
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Try again.");
@@ -37,8 +46,8 @@ export function SubscribeForm() {
       <div className="rounded-2xl bg-sky px-6 py-8 text-center">
         <p className="font-display text-2xl text-forest">You’re on the list.</p>
         <p className="mt-2 text-sm leading-6 text-forest/75">
-          We’ll send real updates — not noise — as Council, the resort, and the
-          campaign move.
+          {message ||
+            "We’ll send real updates — not noise — as Council, the resort, and the campaign move."}
         </p>
       </div>
     );

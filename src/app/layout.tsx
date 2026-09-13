@@ -21,16 +21,28 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://parkcityincline.com"),
   title: "Park City Incline — A Free Step Trail at PCMR",
   description: site.description,
+  alternates: { canonical: "/" },
   openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.name,
+    locale: "en_US",
     title: site.ogTitle,
     description: site.ogDescription,
-    images: [{ url: "/images/hero-dual-stairs.png" }],
+    images: [
+      {
+        url: "/images/hero-dual-stairs.jpg",
+        width: 2000,
+        height: 1116,
+        alt: "Concept render of a dual-lane step trail rising from the Park City Mountain Village base",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.ogTitle,
     description: site.ogDescription,
-    images: ["/images/hero-dual-stairs.png"],
+    images: ["/images/hero-dual-stairs.jpg"],
   },
 };
 
