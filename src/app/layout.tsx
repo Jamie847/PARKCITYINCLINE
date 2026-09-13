@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const playfair = Playfair_Display({
@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://parkcityincline.com"),
-  title: "Park City Incline — A Free Step Trail at PCMR",
+  title: "Park City Incline — Bring the climb home",
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: {

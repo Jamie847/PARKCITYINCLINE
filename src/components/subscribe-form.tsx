@@ -43,9 +43,9 @@ export function SubscribeForm() {
 
   if (status === "done") {
     return (
-      <div className="rounded-2xl bg-sky px-6 py-8 text-center">
-        <p className="font-display text-2xl text-forest">You’re on the list.</p>
-        <p className="mt-2 text-sm leading-6 text-forest/75">
+      <div className="rounded-[1.4rem] bg-snow px-6 py-8 text-center">
+        <p className="font-display text-2xl text-ink">You’re on the list.</p>
+        <p className="mt-2 text-sm leading-6 text-ink/70">
           {message ||
             "We’ll send real updates — not noise — as Council, the resort, and the campaign move."}
         </p>
@@ -62,12 +62,12 @@ export function SubscribeForm() {
         onChange={(event) => setEmail(event.target.value)}
         placeholder="you@email.com"
         aria-label="Email address"
-        className="h-12 flex-1 bg-white px-4 text-base"
+        className="h-12 flex-1 rounded-full border-ink/15 bg-white px-5 text-base"
       />
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="h-12 bg-gold px-6 text-base font-semibold text-forest hover:bg-gold/90"
+        className="h-12 rounded-full bg-ink px-6 text-base font-semibold text-snow hover:bg-ink/90"
       >
         {status === "loading" ? "Adding…" : "Count me in"}
       </Button>

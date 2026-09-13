@@ -2,15 +2,15 @@ export const site = {
   name: "Park City Incline",
   domain: "parkcityincline.com",
   tagline: "Free to climb. Built to last.",
-  badge: "Park City, Utah · Community Initiative",
+  badge: "A community campaign · Park City, Utah",
   heroHeadline: "The Park City Incline",
   heroSubhead:
-    "A purpose-built step trail rising 2,000 vertical feet from the heart of PCMR — free to climb, forever.",
+    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has the mountain, the altitude, and Main Street. We want the stairs.",
   description:
-    "We're building a world-class step trail at Park City Mountain Resort — 2,000 feet, 2,700 steps, free forever. Sign up to support the effort.",
-  ogTitle: "Park City Incline — Free to climb. Built to last.",
+    "A community campaign for a free outdoor staircase on Park City Mountain — the same idea as Colorado’s Manitou Incline. Add your name if you want it here.",
+  ogTitle: "Park City Incline — A free climb for our mountain town",
   ogDescription:
-    "2,000 feet of vertical. Two lanes. Free forever. Help us bring a step trail to Park City.",
+    "What if Park City had its own Manitou Incline? A free, 2,000-foot step trail from the Village toward the sky. Add your name.",
   mission:
     "A community campaign for a free public step trail at Park City Mountain. Not an official City or Vail Resorts project.",
   contactEmail: "hello@parkcityincline.com",
@@ -18,36 +18,99 @@ export const site = {
   goFundMeName: "Build the Park City Incline",
 } as const;
 
+export const story = [
+  {
+    id: "what",
+    kicker: "What",
+    title: "A public staircase on the mountain.",
+    body: "Not a gondola. Not a ticketed attraction. A purpose-built step trail — about 2,000 vertical feet, two lanes so people can go up and down, free every day of the year.",
+  },
+  {
+    id: "why",
+    kicker: "Why",
+    title: "Because the climb becomes the town.",
+    body: "Manitou Springs proved it: a brutal, beautiful staircase turns a quiet morning into a three-hour visit, then lunch. Locals get a dawn workout. Main Street gets a reason to be busy in June.",
+  },
+  {
+    id: "where",
+    kicker: "Where",
+    title: "Payday, from Mountain Village.",
+    body: "Start where the parking already is — not on Old Town streets. The preferred line is Payday at Park City Mountain. Treasure Hill is off the table.",
+  },
+] as const;
+
 export const stats = [
-  { value: "2,000 ft", label: "Vertical gain" },
-  { value: "2,700+", label: "Steps (up & down lanes)" },
-  { value: "Free", label: "Always. No tickets." },
-  { value: "365", label: "Days a year" },
+  { value: "2,000 ft", label: "The climb we want" },
+  { value: "2,700+", label: "Steps, up and down" },
+  { value: "Free", label: "No ticket. Ever." },
+  { value: "365", label: "Days you can show up" },
 ] as const;
 
 export const manitouStats = [
-  { value: "2,768", label: "Steps" },
+  { value: "2,768", label: "Steps on the original" },
   { value: "2,000 ft", label: "Elevation gain" },
-  { value: "45–68%", label: "Average to max grade" },
-  { value: "250,000+", label: "Annual visitors" },
+  { value: "45–68%", label: "How steep it gets" },
+  { value: "250,000+", label: "Climbs a year in Manitou" },
+] as const;
+
+export const whyParkCity = [
+  {
+    title: "A workout that belongs to everyone",
+    body: "No Epic Pass. No reservation lottery. Dawn, lunch break, or after work — if you can get to the Village, you can climb.",
+  },
+  {
+    title: "Shoulder season that actually shows up",
+    body: "May and October are quiet here. An Incline is a reason to fly in when the lifts are asleep — and walk onto Main Street hungry.",
+  },
+  {
+    title: "We already climb this mountain",
+    body: "People skin up before the chairs spin. A dedicated winter uphill lane makes that safer. Summer stairs make it a destination.",
+  },
+  {
+    title: "The Olympic town without the signature climb",
+    body: "We have the altitude, the brand, and a street that knows what to do with tired people. We do not have the stairs. That is the gap.",
+  },
 ] as const;
 
 export const designFeatures = [
   {
-    title: "Dedicated up & down lanes",
-    body: "Two parallel staircases — one climbing, one descending — so the trail never becomes a single-file bottleneck. Manitou’s congestion problem was designed out from the first sketch.",
+    title: "Two lanes, not a traffic jam",
+    body: "One side up, one side down. Manitou’s bottleneck was designed out from the first sketch.",
   },
   {
-    title: "Summit overlook park",
-    body: "A rest area at the top with seating, panoramic views, and interpretive signage. The climb ends in a public park, not a turnaround on loose rock.",
+    title: "A park at the top",
+    body: "The climb ends on a deck with a view — benches, a breath, a photo — not a turnaround on loose rock.",
   },
   {
-    title: "Winter uphill route",
-    body: "When the snow comes, the corridor becomes a dedicated skinning and uphill-ski lane — serving Park City’s already-thriving uphill community all year.",
+    title: "Winter still works",
+    body: "When the snow comes, the corridor becomes a skinning lane. The mountain still skis.",
   },
   {
-    title: "Payday at the PCMR base",
-    body: "The fall line sits on Vail-controlled resort terrain above Mountain Village. The Village already has guest parking, restrooms, and food — this proposal asks to share that doorstep, not to treat the lodge as a public restroom.",
+    title: "Start at the Village",
+    body: "Payday sits on Vail terrain above Mountain Village. Guest parking and food are already at the doorstep. We are asking to share it.",
+  },
+] as const;
+
+export const designImages = [
+  {
+    src: "/images/steps-dual-lane.jpg",
+    alt: "Concept render: dual-lane stone and timber steps with a center divider rail",
+    caption: "Two lanes, one rail",
+  },
+  {
+    src: "/images/base-park.jpg",
+    alt: "Concept render: a trailhead park with seat walls, benches and a restroom at the foot of the stairs",
+    caption: "Trailhead at the base",
+  },
+  {
+    src: "/images/summit-overlook-park.jpg",
+    alt: "Concept render: a summit overlook deck with benches and a valley view",
+    caption: "Overlook at the top",
+  },
+  {
+    src: "/images/winter-uphill.jpg",
+    alt: "Concept render: uphill skiers climbing a dedicated winter corridor at sunrise",
+    caption: "Winter uphill",
   },
 ] as const;
 
@@ -71,43 +134,35 @@ export const partners = [
 ] as const;
 
 export const locationStats = [
-  { value: "~6,900 ft", label: "Base elevation" },
+  { value: "~6,900 ft", label: "Village doorstep" },
   { value: "~8,900 ft", label: "Target top (above Payday lift)" },
-  { value: "~2,000 ft", label: "Vertical gain" },
-  { value: "3 min", label: "Walk from parking" },
+  { value: "~2,000 ft", label: "The climb" },
+  { value: "3 min", label: "Walk from the lot" },
 ] as const;
 
 export const questions = [
   {
-    title: "Will this dump cars on Old Town streets?",
-    body: "Not if it is sited on Payday. Manitou’s original wound was parking on neighborhood streets, not the stairs. Treasure Hill / Sweeney is off the table for that reason. Village lots still need a capacity memo before anyone claims parking is solved on a powder Saturday.",
+    title: "Will this dump cars on Old Town?",
+    body: "Not if it starts at Payday. Manitou’s original wound was neighborhood parking, not the stairs. Village lots still need a real capacity check — we are not pretending powder Saturdays are empty.",
   },
   {
-    title: "Does this close ski runs or steal the bike park?",
-    body: "Winter use is a dedicated uphill lane on existing ski terrain, not a second staircase. Summer stairs have to miss the paid downhill bike product. That alignment is part of the seed study — it is not assumed.",
+    title: "Does this close ski runs or the bike park?",
+    body: "Winter is an uphill lane, not a second staircase. Summer stairs have to miss the paid downhill bike line. That alignment is part of the study.",
   },
   {
-    title: "Who pays, and is it ticketed?",
-    body: "No tickets. Manitou kept the Incline free because charging created more liability than it solved. Seed funding is a $50,000 study budget. The later build is a $2–5 million capital range, not a $750,000 hardware quote.",
+    title: "Who pays? Is there a ticket?",
+    body: "No tickets. Seed money is a $50,000 study — survey, siting, a Council packet — not timber. The later build is a $2–5 million capital range.",
   },
   {
     title: "Who are you, and who owns the land?",
-    body: "This is a community campaign, not a 501(c)(3) yet and not a City or Vail announcement. Payday is Vail-controlled resort terrain. Nothing here is built until the landowner and the City say the conversation is real.",
-  },
-  {
-    title: "What about insurance, wildlife, and permits?",
-    body: "A free staircase on private resort land is an insurance and operations question for Vail first. Slope, drainage, and wildlife review come with any constructed trail. If a segment later touches federal land, NEPA applies. None of that is skipped.",
-  },
-  {
-    title: "What does the resort actually get?",
-    body: "Shoulder-season Village food and retail without lift-ops cost. A managed uphill program in winter. Community goodwill after a hard permitting decade. They keep the land, the hours, and the right to say no to a pilot.",
+    body: "A community campaign. Not a 501(c)(3) yet, and not a City or Vail announcement. Payday is Vail terrain. Nothing is built until they, and the City, say the conversation is real.",
   },
 ] as const;
 
 export const nav = [
-  { href: "#inspiration", label: "Inspiration" },
-  { href: "#design", label: "Design" },
-  { href: "#location", label: "Location" },
+  { href: "#what", label: "What" },
+  { href: "#why", label: "Why" },
+  { href: "#where", label: "Where" },
   { href: "#questions", label: "Questions" },
-  { href: "#support", label: "Support" },
+  { href: "#support", label: "Add your name" },
 ] as const;

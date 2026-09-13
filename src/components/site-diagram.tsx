@@ -1,6 +1,6 @@
 export function SiteDiagram() {
   return (
-    <figure className="overflow-hidden rounded-2xl border border-gold/40 bg-forest">
+    <figure className="overflow-hidden rounded-[1.6rem] border-2 border-gold/70 bg-forest">
       <svg viewBox="0 0 800 420" className="h-auto w-full" role="img" aria-label="Proposed Payday corridor diagram">
         <rect width="800" height="420" fill="#1A3A2E" />
         <path d="M0 320 C 180 280 280 200 400 140 C 520 80 640 50 800 30 L 800 420 L 0 420 Z" fill="#2D5C45" />

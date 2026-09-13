@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const onHome = pathname === "/";
+  const solid = !onHome || scrolled || open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -37,13 +41,16 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled || open ? "bg-forest shadow-sm" : "bg-transparent",
+        solid ? "bg-snow/95 shadow-sm backdrop-blur" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/#top"
-          className="font-display text-lg text-snow sm:text-xl"
+          className={cn(
+            "font-display text-lg sm:text-xl",
+            solid ? "text-ink" : "text-snow",
+          )}
           onClick={() => setOpen(false)}
         >
           {site.name}
@@ -52,22 +59,28 @@ export function SiteHeader() {
           {nav.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
-              className="text-sm text-snow/80 transition-colors hover:text-gold"
+              href={item.href.startsWith("#") ? `/${item.href}` : item.href}
+              className={cn(
+                "text-sm font-medium transition-colors",
+                solid ? "text-ink/70 hover:text-ink" : "text-snow/85 hover:text-gold",
+              )}
             >
               {item.label}
             </Link>
           ))}
           <Link
-            href="#support"
-            className="inline-flex h-10 items-center rounded-lg bg-gold px-4 text-sm font-semibold text-forest hover:bg-gold/90"
+            href="/#support"
+            className="inline-flex h-10 items-center rounded-full bg-coral px-4 text-sm font-semibold text-white hover:bg-coral/90"
           >
-            Support the effort
+            Add my name
           </Link>
         </nav>
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-lg border border-white/20 text-snow md:hidden"
+          className={cn(
+            "inline-flex size-10 items-center justify-center rounded-full border md:hidden",
+            solid ? "border-ink/15 text-ink" : "border-white/30 text-snow",
+          )}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -76,14 +89,14 @@ export function SiteHeader() {
         </button>
       </div>
       {open ? (
-        <nav className="border-t border-white/10 bg-forest px-4 py-6 md:hidden">
+        <nav className="border-t border-ink/10 bg-snow px-4 py-6 md:hidden">
           <ul className="flex flex-col gap-4">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={item.href}
+                  href={item.href.startsWith("#") ? `/${item.href}` : item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display text-2xl text-snow"
+                  className="font-display text-2xl text-ink"
                 >
                   {item.label}
                 </Link>
@@ -91,11 +104,11 @@ export function SiteHeader() {
             ))}
             <li>
               <Link
-                href="#support"
+                href="/#support"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-12 items-center rounded-lg bg-gold px-5 font-semibold text-forest"
+                className="inline-flex h-12 items-center rounded-full bg-coral px-5 font-semibold text-white"
               >
-                Support the effort
+                Add my name
               </Link>
             </li>
           </ul>
