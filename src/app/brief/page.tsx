@@ -18,8 +18,13 @@ export default function BriefPage() {
         </h1>
         <p className="mt-5 text-lg leading-8 text-forest/75">
           A short evidence brief for Council, Vail Resorts, and — if needed —
-          the Utah Olympic Legacy Foundation. Not an official City or resort
-          document.
+          the Utah Olympic Legacy Foundation. This is a community campaign,
+          not a 501(c)(3) yet, and not an official City or resort document.
+        </p>
+        <p className="mt-4 text-sm">
+          <Link href="/" className="font-medium text-mid underline underline-offset-4">
+            ← Back to the campaign
+          </Link>
         </p>
 
         <section className="mt-12">
@@ -97,13 +102,15 @@ export default function BriefPage() {
         <section className="mt-12">
           <h2 className="font-display text-3xl">What this means for Park City money</h2>
           <p className="mt-4 text-sm leading-7 text-forest/80">
-            Even a conservative slice of Manitou’s managed volume — say 80,000
-            to 150,000 climbs a year, not 250,000 — is a shoulder-season
-            machine. Climbers buy coffee, lunch, a beer, a shop shirt, a hotel
-            night if they flew. The ones who matter most to Main Street are
-            the ones who can walk or bus from the last step to a table. That
-            is why siting is not a scenery question. It is a tax-base
-            question.
+            Do not paste Manitou’s $6.2 million tourism-tax figure onto Park
+            City and call it an Incline forecast. That number is Manitou’s
+            whole visitor economy. The transferable mechanic is smaller: a
+            three-hour outdoor climb that empties toward a commercial street.
+            Even a conservative slice — 80,000 to 150,000 climbs a year, not
+            250,000 — is a shoulder-season machine if those people can walk or
+            bus to a table. That is why siting is a tax-base question, not a
+            scenery question. Park City needs its own model before anyone
+            quotes a dollar.
           </p>
         </section>
 
@@ -242,12 +249,51 @@ export default function BriefPage() {
         </section>
 
         <section className="mt-12">
+          <h2 className="font-display text-3xl">Permits, insurance, and the mountain already in use</h2>
+          <div className="mt-4 space-y-4 text-sm leading-7 text-forest/80">
+            <p>
+              Payday is Vail-controlled resort terrain, not City open space.
+              A free public staircase on private ski land is first an
+              insurance and operations problem for the resort: who is covered
+              when a climber falls, who closes the corridor for snowmaking,
+              who staffs a rescue. Manitou’s counsel warned that charging
+              raised liability. Free is still the cleaner legal posture. It
+              is not a waiver.
+            </p>
+            <p>
+              Summer bike and hike products already live on this mountain. The
+              stairs cannot occupy the paid downhill bike line or treat guest
+              restrooms as public infrastructure. Winter use is an uphill lane,
+              not a second built staircase through a ski run.
+            </p>
+            <p>
+              Constructed stairs need slope, drainage, and wildlife review.
+              City and county permits still apply on private land. If a later
+              alignment touches Forest Service ground, NEPA comes with it.
+              None of that is a reason to hide the idea. It is a reason the
+              $50,000 seed buys a study instead of timber.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-12">
           <h2 className="font-display text-3xl">How to talk to Vail — and what to do if they pass</h2>
+          <p className="mt-4 text-sm leading-7 text-forest/80">
+            Lead with what they keep, not what the town wants. They keep the
+            land, the hours, and a veto. They get Village food and retail in
+            May and October without spinning a chair. They get a managed
+            winter uphill product instead of informal skinning across
+            downhill traffic. They get a community story after a decade of
+            hard permits. A seasonal pilot — stairs or flagged uphill, one
+            shoulder season — is an easier first yes than a permanent 2,000
+            feet of timber.
+          </p>
           <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-7">
             <li>
               Lead with Park City Mountain Village. Off-season activation, no
               new CCC on a powder day, community goodwill after a hard
-              permitting decade, Epic Pass summer value.
+              permitting decade, Epic Pass summer value that is not only the
+              paid bike park.
             </li>
             <li>
               If the fall line is wrong, stay inside Vail and look at Canyons

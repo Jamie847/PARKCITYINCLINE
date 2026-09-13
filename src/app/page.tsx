@@ -9,6 +9,7 @@ import {
   locationStats,
   manitouStats,
   partners,
+  questions,
   site,
   stats,
 } from "@/lib/site";
@@ -23,6 +24,7 @@ export default function Home() {
       <Location />
       <Siting />
       <Partners />
+      <Questions />
       <Support />
     </div>
   );
@@ -121,12 +123,12 @@ function Inspiration() {
             climbs in a single eleven-month window.
           </p>
           <p>
-            That volume is why a town of roughly 5,000 people can point to
-            tourism for about half of its tax revenue — $6.2 million in 2024,
-            about $2,600 saved per local household. The Incline is not the only
-            reason visitors come. It is the reason a certain kind of visitor
-            comes, spends three hours, and then eats and drinks on the street
-            at the bottom.
+            Visit Manitou Springs reports that tourism generated about $6.2
+            million in city tax in 2024 — roughly half of that town’s tax take,
+            or about $2,600 per local household. That is Manitou’s whole
+            visitor economy, not an Incline receipt. The useful fact is
+            narrower: a three-hour outdoor climb that empties onto a commercial
+            street is the kind of visit Main Street can actually ring up.
           </p>
         </div>
         <div className="mt-10 rounded-2xl bg-sky p-6 sm:p-8">
@@ -194,21 +196,23 @@ function Location() {
           <p>
             Payday drops from mid-mountain toward the Park City Mountain Village
             lodge on a near-straight fall line. The Village sits at about 6,900
-            feet. A 2,000-foot climb from that doorstep is the product: no
-            switchback hike to the start, no new trailhead carved into a
-            neighborhood.
+            feet. Payday Express itself rises about 1,278 feet — not 2,000. A
+            2,000-foot climb starts on that fall line and continues up existing
+            ski terrain. That overlay is the first thing the seed study has to
+            prove.
           </p>
           <p>
-            The main parking lot is a three-minute flat walk to the first step.
-            Restrooms and food are already there. The line is visible from town,
-            from the lodge, and from the lift. In winter the same corridor
-            becomes a dedicated uphill / skinning lane for a community that is
-            already climbing this mountain before the chairs spin.
+            The Village parking lot is a three-minute flat walk to the first
+            step. Guest restrooms and food are already there; they are resort
+            amenities, not a claim that the lodge is a public park. The line
+            is visible from town, from the lodge, and from the lift. In winter
+            the same corridor becomes a dedicated uphill lane for people who
+            are already climbing this mountain before the chairs spin.
           </p>
           <p>
-            That is why this site leads with Park City base — not because it is
-            the only mountain, but because it is the only site that already
-            solved parking and still finishes toward Main Street.
+            That is why this site leads with Park City base — Vail land, existing
+            lots, and a finish toward Main Street. It is the preferred door, not
+            a finished permit.
           </p>
         </div>
         <div className="mt-10 rounded-2xl border border-gold bg-forest/70 p-6 sm:p-8">
@@ -278,17 +282,37 @@ function Partners() {
           Built with Park City, not just for it
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-8 text-forest/80">
-          This project works because it serves every stakeholder at once. The
-          resort gains a year-round activation that drives off-season
-          visitation. The city gains a free public amenity that strengthens
-          Park City’s identity as a world-class outdoor destination. The
-          community gains a trail that belongs to everyone — no ticket, no
-          reservation, no fee.
+          Nobody has signed on. The resort is being asked for a right-of-way
+          that fills the Village in the shoulder season without a new lift
+          ticket. The City is being asked to scope traffic and call it a public
+          amenity. The community is being asked for emails — and later, if a
+          fiscal sponsor exists, a $50,000 study, not a construction pledge.
         </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {partners.map((item) => (
             <article key={item.title} className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="font-display text-2xl">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-forest/75">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Questions() {
+  return (
+    <section id="questions" className="scroll-mt-20 bg-sky px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-6xl">
+        <p className="text-xs tracking-[0.24em] text-mid uppercase">The hard questions</p>
+        <h2 className="font-display mt-3 text-4xl text-forest sm:text-5xl">
+          What Council and the resort will ask first.
+        </h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {questions.map((item) => (
+            <article key={item.title} className="rounded-2xl bg-white p-6 shadow-sm">
+              <h3 className="font-display text-xl text-forest">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-forest/75">{item.body}</p>
             </article>
           ))}

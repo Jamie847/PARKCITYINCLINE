@@ -27,8 +27,9 @@ export function SiteDiagram() {
         </text>
       </svg>
       <figcaption className="px-5 py-4 text-sm leading-6 text-snow/75">
-        Proposed location: Payday run, Park City Mountain Village. Concept diagram —
-        not a surveyed alignment. Swap with a Nano Banana Pro aerial when you have it.
+        Proposed location: Payday run, Park City Mountain Village. Concept
+        diagram — not a surveyed alignment. Payday Express vertical is about
+        1,278 feet; a 2,000-foot climb continues above the lift.
       </figcaption>
     </figure>
   );

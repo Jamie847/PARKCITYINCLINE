@@ -9,13 +9,26 @@ export function SiteFooter() {
           <p className="font-display text-2xl">{site.name}</p>
           <p className="mt-1 text-sm text-gold">{site.domain}</p>
           <p className="mt-3 max-w-md text-sm leading-6 text-snow/70">{site.mission}</p>
+          <p className="mt-3 text-sm text-snow/60">
+            Press and Council:{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+            >
+              {site.contactEmail}
+            </a>
+          </p>
         </div>
         <div className="text-sm text-snow/60">
           <Link href="/brief" className="hover:text-gold">
             Council briefing
           </Link>
           <span className="mx-2">·</span>
-          <Link href="#support" className="hover:text-gold">
+          <Link href="/#questions" className="hover:text-gold">
+            Questions
+          </Link>
+          <span className="mx-2">·</span>
+          <Link href="/#support" className="hover:text-gold">
             Support
           </Link>
         </div>
