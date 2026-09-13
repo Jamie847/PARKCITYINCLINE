@@ -21,6 +21,7 @@ export default function Home() {
       <Vision />
       <Location />
       <Partners />
+      <Town />
       <Operations />
       <Compare />
       <Path />
@@ -269,6 +270,35 @@ function CaseGrid({
         </article>
       ))}
     </div>
+  );
+}
+
+function Town() {
+  return (
+    <section className="relative isolate overflow-hidden">
+      <div className="relative min-h-[28rem]">
+        <Image
+          src="/images/main-street-dusk.png"
+          alt="Historic Park City Main Street at dusk with the mountain immediately behind town"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1410] via-[#0c1410]/75 to-[#0c1410]/25" />
+        <div className="relative mx-auto flex min-h-[28rem] max-w-6xl items-center px-4 py-16 sm:px-6">
+          <blockquote className="max-w-xl">
+            <p className="font-display text-3xl leading-tight sm:text-4xl">
+              The climb is on the mountain. The win is on Main Street.
+            </p>
+            <p className="mt-5 text-base leading-7 text-foreground/80">
+              Manitou’s Incline is famous because it dumps spent, hungry people
+              into a small town. Park City already has that town. An Incline at
+              PCMR is a shoulder-season Main Street project wearing trail shoes.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
   );
 }
 
