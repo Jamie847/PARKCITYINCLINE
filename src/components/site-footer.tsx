@@ -31,6 +31,15 @@ export function SiteFooter() {
           <Link href="/#support" className="hover:text-gold">
             Add your name
           </Link>
+          <span className="mx-2">·</span>
+          <a
+            href="https://coloradosprings.gov/parks-recreation-and-cultural-services/page/manitou-incline"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gold"
+          >
+            Manitou Incline
+          </a>
         </div>
       </div>
     </footer>

@@ -8,6 +8,7 @@ import {
   designFeatures,
   designImages,
   locationStats,
+  manitouLinks,
   manitouStats,
   questions,
   site,
@@ -112,6 +113,10 @@ function Story() {
             </div>
           ))}
         </div>
+        <p className="mt-4 text-center text-sm text-ink/55">
+          2,000 vertical feet is more than the Payday Express lift. It is a
+          45-minute to two-hour sufferfest — then Main Street.
+        </p>
       </div>
     </section>
   );
@@ -120,50 +125,82 @@ function Story() {
 function Inspiration() {
   return (
     <section id="manitou" className="scroll-mt-24 bg-sky px-4 py-20 sm:px-6 sm:py-24">
-      <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p className="text-sm font-semibold tracking-[0.2em] text-forest uppercase">
-            If you have never heard of it
-          </p>
-          <h2 className="font-display mt-3 text-4xl text-ink sm:text-5xl">
-            The Manitou Incline is a staircase up a mountain.
-          </h2>
-          <div className="mt-6 space-y-4 text-base leading-8 text-ink/75">
-            <p>
-              Picture a nearly straight flight of outdoor stairs bolted to the
-              side of a Colorado peak. 2,768 steps. 2,000 feet of gain. People
-              treat it like a race, a pilgrimage, and a Tuesday morning.
+      <div className="mx-auto max-w-6xl">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="text-sm font-semibold tracking-[0.2em] text-forest uppercase">
+              If you have never heard of it
             </p>
-            <p>
-              It started as a cable-car grade that hauled pipe up Pikes Peak.
-              After a 1990 rockslide killed the railway, the ties stayed.
-              Locals started climbing them. For twenty years it was technically
-              trespassing — and still drew hundreds of thousands of trips a
-              year. Colorado Springs and Manitou Springs finally made it legal
-              in 2013. They kept it free on purpose.
-            </p>
-            <p>
-              Visit Manitou now cites about 250,000 Incline visits a year. That
-              is not “Park City will print $6 million.” It is proof that a
-              hard, famous climb manufactures a three-hour visit — and then
-              empties onto a commercial street. That is the whole idea.
-            </p>
+            <h2 className="font-display mt-3 text-4xl text-ink sm:text-5xl">
+              The Manitou Incline is a staircase up a mountain.
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-8 text-ink/75">
+              <p>
+                Picture a nearly straight flight of outdoor stairs bolted to the
+                side of a Colorado peak. 2,768 steps. 2,000 feet of gain. People
+                treat it like a race, a pilgrimage, and a Tuesday morning.
+              </p>
+              <p>
+                It started as a cable-car grade that hauled pipe up Pikes Peak.
+                After a 1990 rockslide killed the railway, the ties stayed.
+                Locals started climbing them. For twenty years it was technically
+                trespassing — and still drew hundreds of thousands of trips a
+                year. Colorado Springs and Manitou Springs finally made it legal
+                in 2013. They kept it free on purpose.
+              </p>
+              <p>
+                Visit Manitou now cites about 250,000 Incline visits a year. That
+                is not “Park City will print $6 million.” It is proof that a
+                hard, famous climb manufactures a three-hour visit — and then
+                empties onto a commercial street. That is the whole idea.
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <figure className="relative aspect-[4/3] overflow-hidden rounded-[1.6rem]">
+              <Image
+                src="/images/climbers-incline.jpg"
+                alt="Hikers climbing steep wooden railroad-tie steps on a mountain, like the original Manitou Incline"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
+            </figure>
+            <div className="rounded-[1.6rem] bg-white p-7 shadow-[0_12px_40px_-24px_rgba(18,53,44,0.45)]">
+              <p className="text-sm font-bold text-coral uppercase">Manitou, in numbers</p>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                {manitouStats.map((item) => (
+                  <div key={item.label}>
+                    <p className="font-display text-3xl text-forest">{item.value}</p>
+                    <p className="mt-1 text-sm text-ink/65">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="rounded-[1.6rem] bg-white p-7 shadow-[0_12px_40px_-24px_rgba(18,53,44,0.45)]">
-          <p className="text-sm font-bold text-coral uppercase">Manitou, in numbers</p>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            {manitouStats.map((item) => (
-              <div key={item.label}>
-                <p className="font-display text-3xl text-forest">{item.value}</p>
-                <p className="mt-1 text-sm text-ink/65">{item.label}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-sm leading-6 text-ink/60">
-            Park City already has the mountain and the street at the bottom.
-            The missing piece is the climb.
+        <div className="mt-10 rounded-[1.6rem] bg-white p-6 sm:p-8">
+          <p className="font-display text-2xl text-ink">See the real thing</p>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-ink/65">
+            We are not Manitou, and we do not speak for them. If you have never
+            climbed it, these are the pages that explain the original — kept
+            free, reservation required.
           </p>
+          <ul className="mt-5 space-y-3">
+            {manitouLinks.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-forest underline decoration-forest/30 underline-offset-4 hover:decoration-forest"
+                >
+                  {item.label}
+                </a>
+                <span className="mt-0.5 block text-sm text-ink/55">{item.note}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -185,6 +222,37 @@ function Why() {
           public library: hard to use, free to enter, and good for the town
           that hosts it.
         </p>
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <figure className="overflow-hidden rounded-[1.6rem]">
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/images/main-street-after.jpg"
+                alt="Concept of climbers walking onto a historic mountain-town Main Street after a hard hike"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-ink/55">
+              The product is not the stairs. It is the three-hour visit that
+              ends here.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-[1.6rem]">
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/images/main-street-dusk.jpg"
+                alt="Park City-style Main Street at dusk with string lights and mountains at the end of the street"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-ink/55">
+              Main Street already knows what to do with a tired crowd.
+            </figcaption>
+          </figure>
+        </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {whyParkCity.map((item, index) => (
             <article
@@ -292,14 +360,23 @@ function Location() {
             ))}
           </div>
         </div>
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
-          <figure className="relative min-h-72 overflow-hidden rounded-[1.6rem]">
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          <figure className="relative min-h-64 overflow-hidden rounded-[1.6rem]">
+            <Image
+              src="/images/mountain-village-base.jpg"
+              alt="Aerial of a ski-base village and parking lots at the foot of open ski runs"
+              fill
+              className="object-cover"
+              sizes="33vw"
+            />
+          </figure>
+          <figure className="relative min-h-64 overflow-hidden rounded-[1.6rem]">
             <Image
               src="/images/aerial-payday.jpg"
               alt="Aerial concept of a dual-lane staircase on a Park City ski run"
               fill
               className="object-cover"
-              sizes="50vw"
+              sizes="33vw"
             />
           </figure>
           <SiteDiagram />

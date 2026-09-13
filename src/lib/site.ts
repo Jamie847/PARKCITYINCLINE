@@ -93,24 +93,42 @@ export const designFeatures = [
 
 export const designImages = [
   {
+    src: "/images/crowd-on-stairs.jpg",
+    alt: "Concept of people climbing and descending a dual-lane staircase above a mountain village",
+    caption: "What it feels like",
+  },
+  {
     src: "/images/steps-dual-lane.jpg",
     alt: "Concept render: dual-lane stone and timber steps with a center divider rail",
     caption: "Two lanes, one rail",
   },
   {
-    src: "/images/base-park.jpg",
-    alt: "Concept render: a trailhead park with seat walls, benches and a restroom at the foot of the stairs",
-    caption: "Trailhead at the base",
-  },
-  {
-    src: "/images/summit-overlook-park.jpg",
-    alt: "Concept render: a summit overlook deck with benches and a valley view",
-    caption: "Overlook at the top",
+    src: "/images/summit-cheer.jpg",
+    alt: "Concept of friends catching their breath on a summit overlook above a mountain town",
+    caption: "The last step",
   },
   {
     src: "/images/winter-uphill.jpg",
     alt: "Concept render: uphill skiers climbing a dedicated winter corridor at sunrise",
     caption: "Winter uphill",
+  },
+] as const;
+
+export const manitouLinks = [
+  {
+    href: "https://coloradosprings.gov/parks-recreation-and-cultural-services/page/manitou-incline",
+    label: "City of Colorado Springs — official Incline page",
+    note: "History, hours, free reservation rules",
+  },
+  {
+    href: "https://www.visitcos.com/things-to-do/outdoors/manitou-incline-near-colorado-springs-colorado/",
+    label: "Visit Colorado Springs — Incline visitor guide",
+    note: "What the climb actually feels like",
+  },
+  {
+    href: "https://inclinefriends.org/",
+    label: "Incline Friends",
+    note: "The volunteer nonprofit that helps keep Manitou’s stairs open",
   },
 ] as const;
 
