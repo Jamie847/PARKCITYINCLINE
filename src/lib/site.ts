@@ -5,12 +5,20 @@ export const site = {
   badge: "A community campaign · Park City, Utah",
   heroHeadline: "The Park City Incline",
   heroSubhead:
-    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has five real corridors. Do we want the hardest climb, or the climb that pays the town? Those may not be the same place. That is what we are asking you to help decide.",
+    "This is a community campaign to build a free outdoor staircase on a Park City hillside — the same idea as Colorado’s Manitou Incline. Not a gondola. Not a ticket. A public climb locals use at dawn and visitors finish hungry in town.",
+  heroAsk:
+    "Add your name. A list Council can see is how this becomes a $50,000 siting study — not a finished staircase, and not a corridor this website is picking.",
   description:
-    "A community campaign for a free outdoor staircase in Park City — the same idea as Colorado’s Manitou Incline. Five corridors are on the table. Add your name if you want the study.",
+    "A community campaign for a free outdoor staircase in Park City — the same idea as Colorado’s Manitou Incline. Add your name so Council can see the study is worth doing.",
   ogTitle: "Park City Incline — A free climb for our mountain town",
   ogDescription:
-    "Do we want the hardest climb, or the climb that pays the town? Five measured corridors are on the table. The website is not picking. Signers make the study possible.",
+    "A community campaign for a free outdoor staircase in Park City, like Colorado’s Manitou Incline. Add your name so Council can see this is worth a siting study.",
+  heroOutline: [
+    { href: "#what", label: "What it is" },
+    { href: "#manitou", label: "The Colorado original" },
+    { href: "#where", label: "Five corridors" },
+    { href: "#support", label: "Add your name" },
+  ],
   mission:
     "A community campaign for a free public step trail in Park City. Not an official City or Vail Resorts project. The website is not picking the corridor.",
   contactEmail: "hello@parkcityincline.com",

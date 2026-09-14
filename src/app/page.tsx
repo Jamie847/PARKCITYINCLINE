@@ -62,6 +62,9 @@ function Hero() {
         <p className="mt-6 max-w-2xl text-lg leading-8 text-snow sm:text-xl">
           {site.heroSubhead}
         </p>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-snow/85 sm:text-lg">
+          {site.heroAsk}
+        </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button
             render={<Link href="#support" />}
@@ -74,12 +77,29 @@ function Hero() {
             variant="outline"
             className="h-12 rounded-full border-snow/60 bg-white/10 px-7 text-base text-snow hover:bg-white/20"
           >
-            What is an Incline?
+            What’s on this page
           </Button>
         </div>
+        <p className="mt-5 text-xs font-semibold tracking-[0.18em] text-snow/55 uppercase">
+          On this site
+        </p>
+        <nav
+          aria-label="What’s on this page"
+          className="mt-2 flex max-w-2xl flex-wrap gap-2"
+        >
+          {site.heroOutline.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full bg-white/10 px-3 py-1.5 text-sm text-snow/90 ring-1 ring-snow/25 hover:bg-white/20"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
         <p className="mt-5 max-w-lg text-sm leading-6 text-snow/75">
-          A community proposal — not a City project, not a Vail announcement.
-          The only ask right now is your email.
+          Not a City project. Not a Vail announcement. The only ask right now
+          is your email.
         </p>
       </div>
     </section>
@@ -97,6 +117,9 @@ function Story() {
           <h2 className="font-display mt-3 text-4xl text-ink sm:text-5xl">
             What, why, and where.
           </h2>
+          <p className="mt-4 text-base leading-7 text-ink/65">
+            The rest of the page is the evidence. This is the short version.
+          </p>
         </div>
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {story.map((item, index) => (
