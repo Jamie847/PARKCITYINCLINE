@@ -29,20 +29,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: site.ogTitle,
     description: site.ogDescription,
-    images: [
-      {
-        url: "/images/hero-dual-stairs.jpg",
-        width: 2000,
-        height: 1116,
-        alt: "Concept render of a dual-lane step trail rising from the Park City Mountain Village base",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.ogTitle,
     description: site.ogDescription,
-    images: ["/images/hero-dual-stairs.jpg"],
   },
 };
 
