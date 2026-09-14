@@ -5,14 +5,14 @@ export const site = {
   badge: "A community campaign · Park City, Utah",
   heroHeadline: "The Park City Incline",
   heroSubhead:
-    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has five real corridors. Help us pick the one worth studying.",
+    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has five real corridors. Do we want the hardest climb, or the climb that pays the town? Those may not be the same place. That is what we are asking you to help decide.",
   description:
-    "A community campaign for a free outdoor staircase on Park City Mountain — the same idea as Colorado’s Manitou Incline. Add your name if you want it here.",
+    "A community campaign for a free outdoor staircase in Park City — the same idea as Colorado’s Manitou Incline. Five corridors are on the table. Add your name if you want the study.",
   ogTitle: "Park City Incline — A free climb for our mountain town",
   ogDescription:
-    "What if Park City had its own Manitou Incline? Five measured corridors are on the table. Help pick the one worth studying.",
+    "Do we want the hardest climb, or the climb that pays the town? Five measured corridors are on the table. The website is not picking. Signers make the study possible.",
   mission:
-    "A community campaign for a free public step trail at Park City Mountain. Not an official City or Vail Resorts project.",
+    "A community campaign for a free public step trail in Park City. Not an official City or Vail Resorts project. The website is not picking the corridor.",
   contactEmail: "hello@parkcityincline.com",
   goFundMeUrl: process.env.NEXT_PUBLIC_GOFUNDME_URL ?? "",
   goFundMeName: "Build the Park City Incline",
@@ -29,13 +29,13 @@ export const story = [
     id: "why",
     kicker: "Why",
     title: "Because the climb becomes the town.",
-    body: "Manitou Springs proved it: a brutal, beautiful staircase turns a quiet morning into a three-hour visit, then lunch. Locals get a dawn workout. Main Street gets a reason to be busy in June.",
+    body: "Manitou Springs proved it: a brutal, beautiful staircase turns a quiet morning into a three-hour visit, then lunch. Locals get a dawn workout. The town at the bottom — whichever commercial district the corridor finishes toward — gets the spend.",
   },
   {
     id: "where",
     kicker: "Where",
-    title: "Five corridors. You help pick.",
-    body: "The steepest ground is not next to town. The ground next to town is not the steepest. PCMR finishes toward Main Street. Olympic Park is the biggest climb — if the land is even available. Help us argue it out.",
+    title: "Five corridors. You help decide.",
+    body: "The steepest ground is not next to town. The ground next to town is not the steepest. PCMR finishes toward Main Street. Olympic Park is the biggest climb — if the land is even available. Adding your name is how that constituency shows up. This website is not picking the corridor.",
   },
 ] as const;
 
@@ -49,18 +49,18 @@ export const stats = [
 export const manitouStats = [
   { value: "2,768", label: "Steps on the original" },
   { value: "2,000 ft", label: "Elevation gain" },
-  { value: "45–68%", label: "How steep it gets" },
+  { value: "43% / 68%", label: "Avg sustained / steepest" },
   { value: "250,000+", label: "Climbs a year in Manitou" },
 ] as const;
 
 export const whyParkCity = [
   {
     title: "A workout that belongs to everyone",
-    body: "No Epic Pass. No reservation lottery. Dawn, lunch break, or after work — if you can get to the Village, you can climb.",
+    body: "No Epic Pass. No reservation lottery. Dawn, lunch break, or after work — if you can get to the base, you can climb.",
   },
   {
     title: "Shoulder season that actually shows up",
-    body: "May and October are quiet here. An Incline is a reason to fly in when the lifts are asleep — and walk onto Main Street hungry.",
+    body: "May and October are quiet here. An Incline is a reason to fly in when the lifts are asleep — and walk into the town at the bottom hungry.",
   },
   {
     title: "We already climb this mountain",
@@ -68,7 +68,7 @@ export const whyParkCity = [
   },
   {
     title: "The Olympic town without the signature climb",
-    body: "We have the altitude, the brand, and a street that knows what to do with tired people. We do not have the stairs. That is the gap.",
+    body: "We have the altitude, the brand, and towns that know what to do with tired people. We do not have the stairs. That is the gap.",
   },
 ] as const;
 
@@ -144,7 +144,7 @@ export const economyReasons = [
   },
   {
     title: "Manitou is throttled. We would not have to be.",
-    body: "The original is one lane up, walk down Barr Trail, reservation required. July still cleared 48,000 climbs. Two purpose-built lanes, existing Village lots, and no neighborhood street fight is how you get similar numbers — or more — without repeating Ruxton Avenue.",
+    body: "The original is one lane up, walk down Barr Trail, reservation required. July still cleared 48,000 climbs. Two purpose-built lanes, existing base lots, and no neighborhood street fight are why similar numbers are a fair working theory — not a Park City forecast, and not a promise that ours would be larger.",
   },
   {
     title: "The spend is after the last step",
@@ -215,9 +215,9 @@ export const partners = [
 
 export const locationStats = [
   { value: "6,979 ft", label: "Village doorstep (measured)" },
-  { value: "26%", label: "Steepest sampled PCMR pitch" },
-  { value: "1,146 ft", label: "Vertical on that pitch" },
-  { value: "0.9 mi", label: "Walk from parking" },
+  { value: "26%", label: "Steepest sampled PCMR transect" },
+  { value: "1,146 ft", label: "USGS transect vertical — not the lift" },
+  { value: "1,278 ft", label: "Payday Express lift spec" },
 ] as const;
 
 export const questions = [
@@ -231,7 +231,7 @@ export const questions = [
   },
   {
     title: "Who pays? Is there a ticket?",
-    body: "No tickets. Seed money is a $50,000 study — survey, siting, a Council packet — not timber. The later build is a $2–5 million capital range.",
+    body: "No tickets. Seed money is a $50,000 study — survey, siting, a Council packet — not timber. The later build is a $2–5 million capital range. There is not yet a 501(c)(3) or a restricted fund to hold donations. That is still unsettled.",
   },
   {
     title: "Who are you, and who owns the land?",

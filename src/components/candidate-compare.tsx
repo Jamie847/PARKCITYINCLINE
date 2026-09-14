@@ -54,7 +54,8 @@ export function CandidateCompare() {
                 <span className="text-ink/50">(for scale)</span>
               </span>
               <span className="tabular-nums text-ink/70">
-                {MANITOU.grade}% · {MANITOU.vertical.toLocaleString()} ft
+                {MANITOU.grade}% avg / 68% max · {MANITOU.vertical.toLocaleString()}{" "}
+                ft
               </span>
             </div>
             <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-sky">
@@ -123,6 +124,12 @@ export function CandidateCompare() {
             </dl>
 
             <div className="mt-6 space-y-5 text-sm leading-7">
+              <div>
+                <p className="font-semibold text-forest">
+                  Who captures the visit
+                </p>
+                <p className="mt-1 text-ink/75">{c.capturesVisit}</p>
+              </div>
               <div>
                 <p className="font-semibold text-forest">
                   What it has going for it

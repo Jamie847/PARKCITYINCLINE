@@ -28,7 +28,8 @@ export function SiteDiagram() {
       </svg>
       <figcaption className="px-5 py-4 text-sm leading-6 text-snow/75">
         One corridor among five: Payday at Park City Mountain Village. Concept
-        diagram — not a surveyed alignment. Payday Express vertical is about
+        diagram — not a surveyed alignment. The USGS transect on this hillside
+        is 1,146 feet at 26%. Payday Express, the lift, is specified at about
         1,278 feet. Final gain and grade are set by survey.
       </figcaption>
     </figure>

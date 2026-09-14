@@ -110,7 +110,8 @@ export default function BriefPage() {
               military and endurance athletes, and destination visitors.
               Olympic and professional athletes treat it as a known workout.
               Descent is mandatory on Barr Trail — one-way stairs — because
-              two-way traffic on 68% grade is how people get hurt. Our dual
+              two-way traffic on the 68% steepest pitch — against a 43%
+              average sustained grade — is how people get hurt. Our dual
               up/down lanes are the design answer to that injury and
               congestion problem.
             </p>
@@ -137,7 +138,8 @@ export default function BriefPage() {
             48,645 in July. Manitou caps summer starts at 45 per half hour —
             1,125 a day — and still prints those months. Dual lanes on a
             larger destination, next to an airport and an Olympic brand, are
-            why “similar or greater” is a fair working theory. It is not a
+            why similar numbers are a fair working theory. That is not a
+            forecast that Park City’s climb would be larger, and it is not a
             promise until parking and a landowner are real. Events that
             already exist there: a firefighter climb each September 11, trail
             closures for Pikes Peak race weekend, and a year-round FKT /
@@ -155,6 +157,15 @@ export default function BriefPage() {
             and vertical are measured from USGS elevation data, not estimated.
             Nothing here assumes a corridor is buildable.
           </p>
+          <p className="mt-4 text-sm leading-7 text-forest/80">
+            <strong>Campaign opinion, not a decision.</strong> We lean Payday
+            because the town capturing the visit is the part Manitou actually
+            proved. That finish is Old Town / Main Street. The USGS transect
+            on that hillside is 1,146 feet at 26%. Payday Express, the lift,
+            is specified at about 1,278 feet. A surveyed fall line might sit
+            between those. This brief is not picking the corridor. The other
+            four stay on the table.
+          </p>
           <div className="mt-6 space-y-6">
             {candidates.map((item) => (
               <div key={item.id} className="rounded-2xl bg-white p-5 shadow-sm">
@@ -166,6 +177,9 @@ export default function BriefPage() {
                   {item.gradePct}% sustained grade over {item.verticalFt.toLocaleString()} ft
                   of vertical{item.verified ? "" : " (coarse sampling only)"} ·{" "}
                   {item.approachMi} mi from parking
+                </p>
+                <p className="mt-2 text-sm leading-7">
+                  <strong>Who captures the visit:</strong> {item.capturesVisit}
                 </p>
                 <p className="mt-2 text-sm leading-7">{item.forIt}</p>
                 <p className="mt-2 text-sm leading-7 text-forest/70">{item.againstIt}</p>
@@ -208,10 +222,10 @@ export default function BriefPage() {
             GoFundMe will not hold donations in escrow until a goal is hit.
             Transfers go to a bank account as they clear. If this campaign
             raises money, the clean version is a restricted project fund or
-            fiscal sponsor — Park City Community Foundation is the local
-            conversation — so the organizer never parks civic donations in a
-            personal account. A personal GoFundMe can still show demand. It
-            cannot pretend to be a lockbox.
+            fiscal sponsor — Park City Community Foundation is the obvious
+            local conversation, and it is not lined up yet — so the organizer
+            never parks civic donations in a personal account. A personal
+            GoFundMe can still show demand. It cannot pretend to be a lockbox.
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm">
             <table className="w-full text-left text-sm">
@@ -345,9 +359,10 @@ export default function BriefPage() {
             <li>
               Park City Mountain Village is the Main Street argument. Off-season
               activation, no new CCC on a powder day, climbers finishing
-              pointed at Old Town. The sampled pitch is about 26% and 1,146 ft
-              — not Manitou. Vail’s mountain-ops team can tell us if a fall
-              line is steeper.
+              pointed at Old Town. The USGS transect is about 26% and 1,146 ft
+              — not Manitou, and not the 1,278 ft Payday Express lift spec.
+              Vail’s mountain-ops team can tell us if a fall line sits between
+              those.
             </li>
             <li>
               Canyons Village stays inside the same Vail conversation: more
@@ -369,7 +384,9 @@ export default function BriefPage() {
           </ol>
         </section>
 
-        <p className="mt-12 text-sm">
+        <p className="mt-12 text-sm leading-7 text-forest/80">
+          Signers are the constituency. This brief is not choosing the
+          corridor.{" "}
           <Link href="/#support" className="font-medium text-mid underline underline-offset-4">
             Back to the campaign
           </Link>

@@ -16,7 +16,7 @@ export const MANITOU = {
   name: "Manitou Incline",
   grade: 43,
   vertical: 2000,
-  note: "2,000 ft over roughly 4,650 ft of run. 68% at its steepest.",
+  note: "2,000 ft over roughly 4,650 ft of run. About 43% average sustained grade; 68% at its steepest.",
 } as const;
 
 export type Candidate = {
@@ -31,6 +31,7 @@ export type Candidate = {
   baseElevFt: number;
   landowner: string;
   mainStreet: string;
+  capturesVisit: string;
   forIt: string;
   againstIt: string;
   unknown: string;
@@ -50,10 +51,12 @@ export const candidates: Candidate[] = [
     landowner: "Vail Resorts",
     mainStreet:
       "Walk, Town Lift, or a short bus ride — climbers finish pointed at Old Town",
+    capturesVisit:
+      "Old Town / Main Street — on foot or the Town Lift.",
     forIt:
       "This is the only candidate where the climb ends near a historic main street. What Manitou actually demonstrated is not that a staircase draws crowds — it is that the town at the bottom captures what the crowds spend. Parking, restrooms, food and transit already exist here.",
     againstIt:
-      "It is the gentlest ground of the candidates. On the sampled transects the steepest sustained pitch averages about 26% — roughly half Manitou's 43%. A climb here would be a serious staircase, but not the steepest in the country.",
+      "It is the gentlest ground of the candidates. On the sampled transects the steepest sustained pitch averages about 26% — roughly half Manitou's 43% average, and well short of its 68% steepest pitch. A climb here would be a serious staircase, but not the steepest in the country.",
     unknown:
       "Whether a specific ski-run fall line is steeper than a straight transect suggests. This needs a survey, and Park City Mountain's own mountain-operations team would know before anyone else.",
   },
@@ -69,6 +72,8 @@ export const candidates: Candidate[] = [
     baseElevFt: 6930,
     landowner: "Unresolved — see below",
     mainStreet: "Not walkable to Old Town",
+    capturesVisit:
+      "Kimball Junction — a drive or bus from Main Street. A different catchment, not an absent one.",
     forIt:
       "The only Manitou-class terrain the analysis found anywhere in the county: a sustained 40% average over about 1,580 vertical feet, with individual sections at 78%. Re-sampled at 25 m spacing with no cliff bands. Utah Olympic Park also already has visitor operations, parking, and a 2034 story — and people voluntarily climb the ski-jump stairs today, which is the cheapest demand evidence available.",
     againstIt:
@@ -88,6 +93,8 @@ export const candidates: Candidate[] = [
     baseElevFt: 7221,
     landowner: "Deer Valley Resort (Alterra)",
     mainStreet: "About 1.5 miles to Main Street — bus or bike, not a walk",
+    capturesVisit:
+      "Deer Valley base. Main Street is a short bus ride, not a walk.",
     forIt:
       "Middle ground on terrain — about 31% sustained over roughly 1,380 vertical feet — with real parking, an established base area, and a shorter run into town than Canyons.",
     againstIt:
@@ -107,6 +114,8 @@ export const candidates: Candidate[] = [
     baseElevFt: 6160,
     landowner: "Mixed — resort expansion and private development",
     mainStreet: "Not walkable; a drive from Old Town",
+    capturesVisit:
+      "Jordanelle / Mayflower — the least developed catchment of the five today.",
     forIt:
       "Second-steepest ground in the analysis, and the lowest base elevation of any candidate, which means the most vertical available above it. New development means parking and access are being designed right now rather than retrofitted.",
     againstIt:
@@ -125,7 +134,8 @@ export const candidates: Candidate[] = [
     approachMi: 0.8,
     baseElevFt: 6889,
     landowner: "Vail Resorts",
-    mainStreet: "About five miles — the spend stays at Kimball Junction",
+    mainStreet: "About five miles — Canyons Village, not Old Town",
+    capturesVisit: "Canyons Village base commercial.",
     forIt:
       "The shortest approach from parking of any candidate, the largest lots in the system, a new structure, and a summer gondola already running. Same landowner as Mountain Village, so it can be part of a single conversation.",
     againstIt:
@@ -142,7 +152,7 @@ export const candidates: Candidate[] = [
 export const notUnderConsideration = {
   name: "Treasure Hill / Sweeney Switchbacks",
   facts: [
-    "Park City voters approved a $64 million open-space bond covering Treasure Hill in 2018, with about 77% in favour.",
+    "Park City voters approved a $64 million open-space bond covering Treasure Hill in 2018, with about 77% in favor.",
     "A permanent conservation easement on the hillside closed in 2025.",
     "Access runs through Old Town residential streets — the same condition that produced Manitou Springs' parking conflict.",
   ],

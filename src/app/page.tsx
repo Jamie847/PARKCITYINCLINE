@@ -122,8 +122,8 @@ function Story() {
         </div>
         <p className="mt-4 text-center text-sm text-ink/55">
           Vertical and step count are set by survey. The climb we want is
-          still a 45-minute to two-hour sufferfest — then, if we site it
-          right, Main Street.
+          still a 45-minute to two-hour sufferfest — then the town at the
+          bottom. Which town is the siting question.
         </p>
       </div>
     </section>
@@ -145,8 +145,10 @@ function Inspiration() {
             <div className="mt-6 space-y-4 text-base leading-8 text-ink/75">
               <p>
                 Picture a nearly straight flight of outdoor stairs bolted to the
-                side of a Colorado peak. 2,768 steps. 2,000 feet of gain. People
-                treat it like a race, a pilgrimage, and a Tuesday morning.
+                side of a Colorado peak. 2,768 steps. 2,000 feet of gain. The
+                average sustained grade is about 43%; the steepest pitch hits
+                68%. People treat it like a race, a pilgrimage, and a Tuesday
+                morning.
               </p>
               <p>
                 It started as a cable-car grade that hauled pipe up Pikes Peak.
@@ -243,7 +245,7 @@ function Why() {
             </div>
             <figcaption className="mt-2 text-sm text-ink/55">
               The product is not the stairs. It is the three-hour visit that
-              ends here.
+              ends in a commercial district.
             </figcaption>
           </figure>
           <figure className="overflow-hidden rounded-[1.6rem]">
@@ -257,7 +259,8 @@ function Why() {
               />
             </div>
             <figcaption className="mt-2 text-sm text-ink/55">
-              Main Street already knows what to do with a tired crowd.
+              A town at the bottom already knows what to do with a tired
+              crowd. Main Street is the PCMR case — not the only finish.
             </figcaption>
           </figure>
         </div>
@@ -295,7 +298,8 @@ function Economy() {
           Not an expense
         </p>
         <h2 className="font-display mt-3 max-w-3xl text-4xl sm:text-5xl">
-          Manitou’s staircase is a visitor machine. Ours could be larger.
+          Manitou’s staircase is a visitor machine. Park City still needs its
+          own count.
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-8 text-snow/80">
           A town of about 5,000 people hosts a free climb that their tourism
@@ -446,12 +450,14 @@ function Location() {
           <SiteDiagram />
         </div>
         <p className="mt-6 max-w-3xl text-sm leading-7 text-ink/70">
-          One instinct, not a decision: Park City Mountain Village is the only
-          corridor that finishes pointed at Main Street. Payday Express itself
-          rises about 1,278 feet. A surveyed fall line might be steeper than
-          the transect. Guest food and restrooms are resort amenities — we
-          would be asking to share the doorstep, not to call the lodge a
-          public park.
+          Campaign opinion, not a decision: we lean Payday because the town
+          capturing the visit is the part Manitou actually proved. That finish
+          is Old Town / Main Street. The USGS transect on this hillside is
+          1,146 feet at 26%. Payday Express, the lift, is specified at about
+          1,278 feet. A surveyed fall line might sit between those. Guest food
+          and restrooms are resort amenities — we would be asking to share the
+          doorstep, not to call the lodge a public park. The other four
+          corridors stay on the table.
         </p>
 
         <div className="mt-8 rounded-[1.6rem] border border-ink/10 bg-white p-5 sm:p-6">
@@ -518,10 +524,12 @@ function Support() {
           Add your name.
         </h2>
         <p className="mt-4 text-base leading-8 text-ink/80">
-          Tell Council this conversation is worth scoping. Tell the resort
-          Payday is worth a look. That is the whole call to action — an email,
-          so the list is visible. Money comes later, and only into a restricted
-          fund, for a $50,000 study.{" "}
+          This website is not choosing the corridor. Signers are the
+          constituency that makes a study possible. Tell Council the
+          conversation is worth scoping. Seed money is $50,000 for that study
+          — survey, siting, a Council packet — not timber. There is not yet a
+          501(c)(3) or a restricted fund, and Park City Community Foundation
+          is not lined up. That home still has to be built.{" "}
           <Link href="/brief" className="font-semibold underline underline-offset-4">
             See the budget
           </Link>
