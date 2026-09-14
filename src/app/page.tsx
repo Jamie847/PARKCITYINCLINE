@@ -3,13 +3,13 @@ import Link from "next/link";
 import { SiteDiagram } from "@/components/site-diagram";
 import { SubscribeForm } from "@/components/subscribe-form";
 import { Button } from "@/components/ui/button";
-import { ruledOut } from "@/lib/locations";
+import { notUnderConsideration } from "@/lib/locations";
+import { CandidateCompare } from "@/components/candidate-compare";
 import {
   designFeatures,
   designImages,
   economyReasons,
   eventIdeas,
-  locationStats,
   manitouFacts,
   manitouLinks,
   manitouStats,
@@ -121,8 +121,9 @@ function Story() {
           ))}
         </div>
         <p className="mt-4 text-center text-sm text-ink/55">
-          2,000 vertical feet is more than the Payday Express lift. It is a
-          45-minute to two-hour sufferfest — then Main Street.
+          Vertical and step count are set by survey. The climb we want is
+          still a 45-minute to two-hour sufferfest — then, if we site it
+          right, Main Street.
         </p>
       </div>
     </section>
@@ -325,8 +326,9 @@ function Economy() {
         <p className="mt-3 max-w-3xl text-sm leading-7 text-snow/75">
           Manitou already closes the stairs one morning a year for a firefighter
           climb, and shuts them for Pikes Peak race weekend. The rest of the
-          year the “event” is the climb itself. Park City can do both — and
-          winter, which Manitou barely has.
+          year the “event” is the climb itself. Park City could host the same
+          kinds of days — and then close for ski season, which Manitou barely
+          has to think about.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {eventIdeas.map((item) => (
@@ -357,7 +359,7 @@ function Design() {
           How we would build it
         </p>
         <h2 className="font-display mt-3 max-w-3xl text-4xl text-snow sm:text-5xl">
-          Dual lanes. A park at the top. Open in winter.
+          Dual lanes. A park at the top. Closed for ski season.
         </h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {designFeatures.map((item) => (
@@ -394,43 +396,35 @@ function Design() {
 
 function Location() {
   return (
-    <section id="where" className="topo-bg scroll-mt-24 px-4 py-20 sm:px-6 sm:py-24">
+    <section id="where" className="scroll-mt-24 bg-sky px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
-        <p className="text-sm font-semibold tracking-[0.2em] text-gold uppercase">
-          Where
+        <p className="text-sm font-semibold tracking-[0.2em] text-forest uppercase">
+          The open question
         </p>
-        <h2 className="font-display mt-3 text-4xl text-snow sm:text-5xl">
-          Payday. From the Village lot.
+        <h2 className="font-display mt-3 text-4xl text-ink sm:text-5xl">
+          Five corridors. Help us argue about them.
         </h2>
-        <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-snow/90">
+        <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-ink/75">
           <p>
-            The first step should be a flat three-minute walk from a lot that
-            already exists — not a new trailhead carved into a neighborhood.
-            Payday drops toward Park City Mountain Village on a near-straight
-            fall line. That is the preferred door.
+            There is a real trade-off here and no obvious winner. The steepest
+            ground in the county is not near town. The ground near town is not
+            the steepest. A shorter staircase people walk to from Main Street
+            may serve Park City better than a bigger one they drive to — or it
+            may not, and the bigger one may be the thing worth building once.
           </p>
           <p>
-            Honest number: Payday Express itself rises about 1,278 feet, not
-            2,000. A 2,000-foot climb starts on that line and continues up
-            existing ski terrain. The seed study has to prove that overlay.
-            Guest food and restrooms are resort amenities. We are asking to
-            share the doorstep, not to call the lodge a public park.
+            We measured all five against public elevation data rather than
+            guessing. The numbers below are the ground as it is. Which
+            corridor is worth studying is a decision for the community, the
+            resorts, and the City — not for this website.
           </p>
         </div>
-        <div className="mt-10 rounded-[1.6rem] bg-ink/40 p-6 ring-2 ring-gold sm:p-8">
-          <p className="font-display text-2xl text-gold">
-            Payday · Park City Mountain Village
-          </p>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {locationStats.map((item) => (
-              <div key={item.label}>
-                <p className="font-display text-2xl text-snow">{item.value}</p>
-                <p className="mt-1 text-sm text-snow/70">{item.label}</p>
-              </div>
-            ))}
-          </div>
+
+        <div className="mt-10">
+          <CandidateCompare />
         </div>
-        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
           <figure className="relative min-h-64 overflow-hidden rounded-[1.6rem]">
             <Image
               src="/images/mountain-village-base.jpg"
@@ -451,17 +445,40 @@ function Location() {
           </figure>
           <SiteDiagram />
         </div>
-        <p className="mt-6 max-w-3xl text-sm leading-7 text-snow/80">
-          If Payday is the wrong fall line, Canyons Village is the fallback —
-          still Vail, more parking, weaker Main Street story. The Olympic Park
-          is the door if Vail passes.{" "}
-          <strong className="text-gold">{ruledOut.name} is not a site.</strong>{" "}
-          {ruledOut.why}{" "}
-          <Link href="/brief" className="font-semibold text-gold underline underline-offset-4">
-            Read the full siting brief
-          </Link>
-          .
+        <p className="mt-6 max-w-3xl text-sm leading-7 text-ink/70">
+          One instinct, not a decision: Park City Mountain Village is the only
+          corridor that finishes pointed at Main Street. Payday Express itself
+          rises about 1,278 feet. A surveyed fall line might be steeper than
+          the transect. Guest food and restrooms are resort amenities — we
+          would be asking to share the doorstep, not to call the lodge a
+          public park.
         </p>
+
+        <div className="mt-8 rounded-[1.6rem] border border-ink/10 bg-white p-5 sm:p-6">
+          <h3 className="font-display text-lg text-ink">
+            {notUnderConsideration.name} is not among them
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm leading-7 text-ink/70">
+            {notUnderConsideration.facts.map((fact) => (
+              <li key={fact} className="flex gap-3">
+                <span aria-hidden className="text-ink/30">
+                  —
+                </span>
+                <span>{fact}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm leading-7 text-ink/70">
+            Those are the facts as they stand. Readers can draw their own
+            conclusion about whether a constructed staircase belongs there.{" "}
+            <Link
+              href="/brief"
+              className="font-medium text-forest underline underline-offset-4"
+            >
+              Read the siting brief
+            </Link>
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ruledOut, sites } from "@/lib/locations";
+import { candidates, methodNote, notUnderConsideration } from "@/lib/locations";
 import { manitouLinks } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function BriefPage() {
           Park City Incline · Stakeholder briefing
         </p>
         <h1 className="font-display mt-3 text-4xl leading-tight sm:text-5xl">
-          What Manitou proved, and where Park City should put the stairs
+          What Manitou proved, and five corridors worth arguing about
         </h1>
         <p className="mt-5 text-lg leading-8 text-forest/75">
           A short evidence brief for Council, Vail Resorts, and — if needed —
@@ -146,29 +146,53 @@ export default function BriefPage() {
         </section>
 
         <section className="mt-12">
-          <h2 className="font-display text-3xl">Where it should live</h2>
+          <h2 className="font-display text-3xl">Five corridors worth studying</h2>
           <p className="mt-4 text-sm leading-7 text-forest/80">
-            Build parking last. Steal the Manitou lesson: the project dies in
-            the neighborhood, not on the mountain. These are the only three
-            sites that already have lots, restrooms, and an operator used to
-            crowds.
+            Build parking last. The Manitou lesson is that the project dies in
+            the neighborhood, not on the mountain. Every candidate below
+            already has lots, restrooms, and an operator used to crowds —
+            except where land ownership is still the gating question. Grades
+            and vertical are measured from USGS elevation data, not estimated.
+            Nothing here assumes a corridor is buildable.
           </p>
           <div className="mt-6 space-y-6">
-            {sites.map((item) => (
+            {candidates.map((item) => (
               <div key={item.id} className="rounded-2xl bg-white p-5 shadow-sm">
-                <p className="text-xs tracking-[0.18em] text-light uppercase">{item.rank}</p>
+                <p className="text-xs tracking-[0.18em] text-light uppercase">
+                  {item.nickname}
+                </p>
                 <h3 className="font-display mt-1 text-2xl">{item.name}</h3>
-                <p className="mt-2 text-sm leading-7">{item.why}</p>
-                <p className="mt-2 text-sm leading-7 text-forest/70">{item.risk}</p>
+                <p className="mt-2 text-sm leading-7 text-forest/70">
+                  {item.gradePct}% sustained grade over {item.verticalFt.toLocaleString()} ft
+                  of vertical{item.verified ? "" : " (coarse sampling only)"} ·{" "}
+                  {item.approachMi} mi from parking
+                </p>
+                <p className="mt-2 text-sm leading-7">{item.forIt}</p>
+                <p className="mt-2 text-sm leading-7 text-forest/70">{item.againstIt}</p>
+                <p className="mt-2 text-sm leading-7 text-forest/70">
+                  <strong>Unresolved:</strong> {item.unknown}
+                </p>
                 <p className="mt-2 text-xs leading-6 text-forest/55">
-                  Land: {item.land}. Main Street: {item.mainStreet}.
+                  Land: {item.landowner}. Main Street: {item.mainStreet}.
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm leading-7 text-forest/80">
-            <strong>{ruledOut.name}.</strong> {ruledOut.why}
-          </p>
+          <div className="mt-6 text-sm leading-7 text-forest/80">
+            <p>
+              <strong>{notUnderConsideration.name} is not among them.</strong>
+            </p>
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              {notUnderConsideration.facts.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ul>
+            <p className="mt-3">
+              Those are the facts as they stand. Readers can draw their own
+              conclusion.
+            </p>
+          </div>
+          <p className="mt-6 text-xs leading-6 text-forest/55">{methodNote}</p>
         </section>
 
         <section className="mt-12">
@@ -208,16 +232,16 @@ export default function BriefPage() {
                   <td className="px-5 py-3">Survey, GIS, Payday overlay</td>
                   <td className="px-5 py-3 tabular-nums">$10,000</td>
                   <td className="hidden px-5 py-3 sm:table-cell">
-                    Map the 2,000-ft climb against the ~1,278-ft Payday lift
-                    so the pitch is not a vertical lie.
+                    Map each corridor’s measured pitch against a surveyed fall
+                    line so the vertical is not a guess.
                   </td>
                 </tr>
                 <tr>
                   <td className="px-5 py-3">Concept alignment memo</td>
                   <td className="px-5 py-3 tabular-nums">$15,000</td>
                   <td className="hidden px-5 py-3 sm:table-cell">
-                    Dual-lane stairs, drainage sketch, winter uphill corridor
-                    — not stamped construction drawings.
+                    Dual-lane stairs, drainage sketch, and a winter-closure
+                    plan — not stamped construction drawings.
                   </td>
                 </tr>
                 <tr>
@@ -271,7 +295,7 @@ export default function BriefPage() {
           <p className="mt-6 text-sm leading-7 text-forest/80">
             The later build is a Class 5 concept range — $2 to $5 million —
             until a survey and geotech exist. Dual-lane stairs at this length,
-            plus drainage, retaining, a summit rest area, a winter corridor,
+            plus drainage, retaining, a summit rest area,
             design, and a small maintenance reserve, are why the number is
             not $750,000. Manitou inherited railroad ties. Park City would be
             building on purpose. Treat any per-step hardware quote as a
@@ -294,8 +318,8 @@ export default function BriefPage() {
             <p>
               Summer bike and hike products already live on this mountain. The
               stairs cannot occupy the paid downhill bike line or treat guest
-              restrooms as public infrastructure. Winter use is an uphill lane,
-              not a second built staircase through a ski run.
+              restrooms as public infrastructure. Winter, the staircase
+              closes. Snow covers the treads; ski operations keep the hill.
             </p>
             <p>
               Constructed stairs need slope, drainage, and wildlife review.
@@ -312,34 +336,35 @@ export default function BriefPage() {
           <p className="mt-4 text-sm leading-7 text-forest/80">
             Lead with what they keep, not what the town wants. They keep the
             land, the hours, and a veto. They get Village food and retail in
-            May and October without spinning a chair. They get a managed
-            winter uphill product instead of informal skinning across
-            downhill traffic. They get a community story after a decade of
-            hard permits. A seasonal pilot — stairs or flagged uphill, one
-            shoulder season — is an easier first yes than a permanent 2,000
-            feet of timber.
+            May and October without spinning a chair. They get a community
+            story after a decade of hard permits. A seasonal pilot — stairs
+            for one shoulder season, closed in winter — is an easier first
+            yes than a permanent staircase of unknown length.
           </p>
           <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-7">
             <li>
-              Lead with Park City Mountain Village. Off-season activation, no
-              new CCC on a powder day, community goodwill after a hard
-              permitting decade, Epic Pass summer value that is not only the
-              paid bike park.
+              Park City Mountain Village is the Main Street argument. Off-season
+              activation, no new CCC on a powder day, climbers finishing
+              pointed at Old Town. The sampled pitch is about 26% and 1,146 ft
+              — not Manitou. Vail’s mountain-ops team can tell us if a fall
+              line is steeper.
             </li>
             <li>
-              If the fall line is wrong, stay inside Vail and look at Canyons
-              Village. More parking, weaker Main Street story, same owner.
+              Canyons Village stays inside the same Vail conversation: more
+              parking, weaker Main Street story, terrain not yet re-sampled
+              at fine resolution.
             </li>
             <li>
-              If Vail is not the partner, take the same drawings to the Utah
-              Olympic Legacy Foundation. Different land, existing lots, 2034
-              narrative, a nonprofit that has publicly said the park loses
-              $2–3 million a year and needs more visitation. Expect Summit
-              County, not City Hall, to be the permitter.
+              Deer Valley — Snow Park and East / Jordanelle — are Alterra
+              conversations. Snow Park has a verified 31% pitch. East is
+              coarse-only. The unknown is whether Alterra wants public access
+              on resort terrain at all.
             </li>
             <li>
-              Do not open on Treasure Hill / Sweeney. That is how this becomes
-              an open-space war instead of a tourism project.
+              Utah Olympic Park area is the only Manitou-class terrain in the
+              sample — and land ownership is the gating question. Iron Mountain
+              took a conservation easement in 2023; Toll Canyon is Basin
+              Recreation open space. A parcel check comes before any drawing.
             </li>
           </ol>
         </section>

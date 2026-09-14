@@ -5,12 +5,12 @@ export const site = {
   badge: "A community campaign · Park City, Utah",
   heroHeadline: "The Park City Incline",
   heroSubhead:
-    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has the mountain, the altitude, and Main Street. We want the stairs.",
+    "Colorado has the Manitou Incline — a near-straight outdoor staircase that people fly in to climb. Park City has five real corridors. Help us pick the one worth studying.",
   description:
     "A community campaign for a free outdoor staircase on Park City Mountain — the same idea as Colorado’s Manitou Incline. Add your name if you want it here.",
   ogTitle: "Park City Incline — A free climb for our mountain town",
   ogDescription:
-    "What if Park City had its own Manitou Incline? A free, 2,000-foot step trail from the Village toward the sky. Add your name.",
+    "What if Park City had its own Manitou Incline? Five measured corridors are on the table. Help pick the one worth studying.",
   mission:
     "A community campaign for a free public step trail at Park City Mountain. Not an official City or Vail Resorts project.",
   contactEmail: "hello@parkcityincline.com",
@@ -23,7 +23,7 @@ export const story = [
     id: "what",
     kicker: "What",
     title: "A public staircase on the mountain.",
-    body: "Not a gondola. Not a ticketed attraction. A purpose-built step trail — about 2,000 vertical feet, two lanes so people can go up and down, free every day of the year.",
+    body: "Not a gondola. Not a ticketed attraction. A purpose-built step trail — two lanes so people can go up and down, free in the seasons the mountain is not skiing.",
   },
   {
     id: "why",
@@ -34,16 +34,16 @@ export const story = [
   {
     id: "where",
     kicker: "Where",
-    title: "Payday, from Mountain Village.",
-    body: "Start where the parking already is — not on Old Town streets. The preferred line is Payday at Park City Mountain. Treasure Hill is off the table.",
+    title: "Five corridors. You help pick.",
+    body: "The steepest ground is not next to town. The ground next to town is not the steepest. PCMR finishes toward Main Street. Olympic Park is the biggest climb — if the land is even available. Help us argue it out.",
   },
 ] as const;
 
 export const stats = [
-  { value: "2,000 ft", label: "The climb we want" },
-  { value: "2,700+", label: "Steps, up and down" },
+  { value: "1,100–1,600 ft", label: "Vertical, by corridor" },
+  { value: "Set by survey", label: "Step count" },
   { value: "Free", label: "No ticket. Ever." },
-  { value: "365", label: "Days you can show up" },
+  { value: "3 seasons", label: "Closed for ski ops" },
 ] as const;
 
 export const manitouStats = [
@@ -64,7 +64,7 @@ export const whyParkCity = [
   },
   {
     title: "We already climb this mountain",
-    body: "People skin up before the chairs spin. A dedicated winter uphill lane makes that safer. Summer stairs make it a destination.",
+    body: "People already go uphill here. A public staircase would be a three-season climb. In winter the mountain’s first job stays skiing.",
   },
   {
     title: "The Olympic town without the signature climb",
@@ -82,8 +82,8 @@ export const designFeatures = [
     body: "The climb ends on a deck with a view — benches, a breath, a photo — not a turnaround on loose rock.",
   },
   {
-    title: "Winter still works",
-    body: "When the snow comes, the corridor becomes a skinning lane. The mountain still skis.",
+    title: "Closed for ski season",
+    body: "Snow covers the steps. The staircase is a three-season climb. The corridor yields to ski operations in winter — the mountain’s first job stays its first job.",
   },
   {
     title: "Start at the Village",
@@ -110,7 +110,7 @@ export const designImages = [
   {
     src: "/images/winter-uphill.jpg",
     alt: "Concept render: uphill skiers climbing a dedicated winter corridor at sunrise",
-    caption: "Winter uphill",
+    caption: "Winter: the mountain skis",
   },
 ] as const;
 
@@ -155,15 +155,15 @@ export const economyReasons = [
 export const eventIdeas = [
   {
     title: "The everyday product",
-    body: "365 days of locals at dawn and visitors at 10 a.m. is the business. Manitou’s money is not a festival weekend. It is a staircase that is always on.",
+    body: "Locals at dawn and visitors at 10 a.m. is the business. Manitou’s money is not a festival weekend. It is a staircase people can use whenever the mountain is not skiing.",
   },
   {
     title: "First-responder and charity climbs",
     body: "Colorado Springs closes the Incline one morning a year for a Firefighter Climb on 9/11. Park City could host the same — plus school, nonprofit, and wounded-warrior days — without turning the trail into a ticketed carnival.",
   },
   {
-    title: "Winter uphill series",
-    body: "People already skin this mountain. A marked corridor is a race series, a training lane, and a reason the Village is busy on a bluebird Tuesday in March.",
+    title: "First-snow to last-dirt",
+    body: "The stairs would be a three-season product. Winter belongs to ski operations. That is a cleaner first conversation with the resort than claiming a year-round lane on a ski run.",
   },
   {
     title: "2034 and the FKT crowd",
@@ -197,11 +197,11 @@ export const manitouLinks = [
 export const partners = [
   {
     title: "Park City Mountain Resort",
-    body: "The ask is a right-of-way on resort terrain, not a claim that the land is public. In return: shoulder-season Village sales without spinning chairs, a dedicated winter uphill lane, and a community story Vail can own.",
+    body: "The ask is a right-of-way on resort terrain, not a claim that the land is public. In return: shoulder-season Village sales without spinning chairs, and a community story the resort can own.",
   },
   {
     title: "Park City Municipal",
-    body: "Permitting, traffic scoping, and a public amenity endorsement — so this is civic infrastructure on private resort land, not a ticketed attraction and not a Treasure Hill fight.",
+    body: "Permitting, traffic scoping, and a public amenity endorsement — so this is civic infrastructure on private resort land, not a ticketed attraction.",
   },
   {
     title: "Park City Recreation & trail partners",
@@ -214,10 +214,10 @@ export const partners = [
 ] as const;
 
 export const locationStats = [
-  { value: "~6,900 ft", label: "Village doorstep" },
-  { value: "~8,900 ft", label: "Target top (above Payday lift)" },
-  { value: "~2,000 ft", label: "The climb" },
-  { value: "3 min", label: "Walk from the lot" },
+  { value: "6,979 ft", label: "Village doorstep (measured)" },
+  { value: "26%", label: "Steepest sampled PCMR pitch" },
+  { value: "1,146 ft", label: "Vertical on that pitch" },
+  { value: "0.9 mi", label: "Walk from parking" },
 ] as const;
 
 export const questions = [
@@ -227,7 +227,7 @@ export const questions = [
   },
   {
     title: "Does this close ski runs or the bike park?",
-    body: "Winter is an uphill lane, not a second staircase. Summer stairs have to miss the paid downhill bike line. That alignment is part of the study.",
+    body: "Winter, the stairs close. Snow covers the treads and ski operations keep the hill. Summer stairs have to miss the paid downhill bike line. That alignment is part of the study.",
   },
   {
     title: "Who pays? Is there a ticket?",

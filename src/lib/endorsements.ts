@@ -38,7 +38,7 @@ export function councilLetter(entry: Pick<Endorsement, "name" | "role" | "zip" |
 
 I am writing in support of a formal scoping conversation for the Park City Incline — a reservation-managed outdoor staircase at the base of Park City Mountain, inspired by Colorado’s Manitou Incline.
 
-Park City does not need another abstract amenity. It needs a year-round civic landmark residents can use, a shoulder-season reason for visitors to fill Main Street, and a public-private project that puts Vail Resorts and the City on the same side of a simple idea: 2,000 vertical feet of stairs, timed entry, transit-first access, and a required descent trail.
+Park City does not need another abstract amenity. It needs a three-season public staircase residents can use, a shoulder-season reason for visitors to fill Main Street, and a public-private study of the corridors that can actually host it.
 
 I ask Council to:
 1. Direct staff to scope a public-private partnership with Park City Mountain / Vail Resorts.
@@ -56,5 +56,5 @@ export function mailtoCampaign(entry: Endorsement, letter: string) {
   const body = encodeURIComponent(
     `New endorsement from the Park City Incline site\n\nName: ${entry.name}\nEmail: ${entry.email}\nRole: ${entry.role}\nZIP: ${entry.zip}\nPublic name: ${entry.publicName ? "yes" : "no"}\n\nQuote:\n${entry.quote || "(none)"}\n\n--- Letter ---\n${letter}`,
   );
-  return `mailto:jamescmurray33@gmail.com?subject=${subject}&body=${body}`;
+  return `mailto:hello@parkcityincline.com?subject=${subject}&body=${body}`;
 }

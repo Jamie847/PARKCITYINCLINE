@@ -1,11 +1,10 @@
 export const campaign = {
   name: "Park City Incline",
-  tagline: "A staircase the Wasatch has never had.",
-  lede: "A reservation-managed outdoor incline at the base of Park City Mountain — our version of Colorado’s Manitou Incline, built as a civic landmark and a year-round reason to come to town.",
+  tagline: "A public staircase at the base of Park City Mountain.",
+  lede: "A reservation-managed outdoor incline — our version of Colorado’s Manitou Incline — studied as a civic amenity residents can use in the off-season.",
   contact: {
     name: "Jamie Murray",
-    email: "jamescmurray33@gmail.com",
-    phone: "847-736-1954",
+    email: "hello@parkcityincline.com",
     city: "Park City, Utah",
   },
   ask: [
@@ -17,14 +16,14 @@ export const campaign = {
 
 export const stats = [
   {
-    value: "2,744",
+    value: "Set by survey",
     label: "Proposed steps",
-    detail: "A full Incline-class climb, not a fitness stair in a hotel.",
+    detail: "Step count follows the chosen corridor. The old 2,744 figure described one lane.",
   },
   {
-    value: "2,000'",
-    label: "Vertical gain",
-    detail: "Modeled on Manitou’s legendary 2,000-foot rise.",
+    value: "1,100–1,600'",
+    label: "Vertical, by corridor",
+    detail: "Measured USGS pitches. Manitou’s 2,000-foot rise is the reference, not our promise.",
   },
   {
     value: "250k+",
@@ -32,17 +31,17 @@ export const stats = [
     detail: "Public estimates for Colorado’s Incline — the proof of demand.",
   },
   {
-    value: "6,900'",
+    value: "6,979'",
     label: "PCMR base elevation",
-    detail: "The mountain already starts where a world-class climb should.",
+    detail: "Measured at the Mountain Village doorstep. Just under 7,000 feet.",
   },
 ] as const;
 
 export const manitouFacts = [
-  { label: "Steps", manitou: "2,768", parkCity: "2,744 proposed" },
-  { label: "Elevation gain", manitou: "~2,000 ft", parkCity: "2,000 ft target" },
-  { label: "Distance", manitou: "0.88 mile", parkCity: "Under 1 mile" },
-  { label: "Steepest grade", manitou: "Up to 68%", parkCity: "Ski-fall-line terrain" },
+  { label: "Steps", manitou: "2,768", parkCity: "Set by survey" },
+  { label: "Elevation gain", manitou: "~2,000 ft", parkCity: "1,100–1,600 ft by corridor" },
+  { label: "Distance", manitou: "0.88 mile", parkCity: "Set by survey" },
+  { label: "Steepest grade", manitou: "Up to 68%", parkCity: "To be set by survey" },
   { label: "Access", manitou: "Free reservation + waiver", parkCity: "Same model, transit-first" },
   { label: "Descent", manitou: "Barr Trail only", parkCity: "Existing PCMR hiking trail" },
   { label: "Land", manitou: "Former cable-car grade", parkCity: "Vail-owned resort base" },
@@ -52,7 +51,7 @@ export const manitouFacts = [
 export const councilCase = [
   {
     title: "A civic landmark, not another private amenity",
-    body: "Park City already has world-class skiing. What we do not have is a single outdoor climb that belongs to the town’s identity the way the Manitou Incline belongs to the Front Range. This is a public-facing fitness commons on resort land — something residents, visitors, and Olympic athletes can share.",
+    body: "Park City already has world-class skiing. What we do not have is a public outdoor staircase at a resort base. Manitou is used by Olympic and military athletes — that is documented. Who would train here is not.",
   },
   {
     title: "Shoulder-season economics without a new subdivision",
@@ -68,14 +67,14 @@ export const councilCase = [
   },
   {
     title: "A 2034 story we can own",
-    body: "Salt Lake City–Utah 2034 will put a global spotlight on this valley. An Incline at the base of the largest ski resort in America is the kind of simple, photogenic, resident-usable project that outlasts a Games. It is training infrastructure and a welcome mat.",
+    body: "Salt Lake City–Utah 2034 will put a global spotlight on this valley. A public staircase at a resort base is training infrastructure and a welcome mat — if a landowner and a corridor are real.",
   },
 ] as const;
 
 export const vailCase = [
   {
     title: "A summer icon only Park City can claim",
-    body: "Every Vail mountain has scenic lifts and an adventure park. None has an Incline. This is a category-defining summer product on land Park City Mountain already operates — a reason Epic Pass holders fly here in July, and a reason locals walk from Main Street at 6 a.m.",
+    body: "No North American ski resort currently operates a public stair climb of this kind — that we can find. A free staircase on land Park City Mountain already operates is a shoulder-season product, not a claim about Vail’s whole portfolio.",
   },
   {
     title: "Use the mountain you already own",
@@ -83,11 +82,11 @@ export const vailCase = [
   },
   {
     title: "Community goodwill after a hard permitting decade",
-    body: "Lift upgrades, comfortable carrying capacity, and neighborhood trust have defined the last several years of PCMR politics. An Incline is a visible, year-round gift back to the town — something residents can use that does not increase skier CCC on a powder day.",
+    body: "Lift upgrades, comfortable carrying capacity, and neighborhood trust have defined the last several years of PCMR politics. An Incline would be a public amenity residents can use in the off-season — something that does not increase skier CCC on a powder day.",
   },
   {
     title: "Food, retail, and pass value without more beds",
-    body: "Climbers eat. They buy a coffee, a shuttle ride, a recovery beer on Main Street, a scenic lift down, a shop shirt. They do it in summer, when lodging and F&B have slack. That is high-margin, low-cannibalization demand sitting at the Village doorstep.",
+    body: "Visit Manitou reports tourism made about $6.2 million in city tax in 2024 — half their tax take. That is the whole visitor economy, not an Incline receipt. The transferable fact is the visit shape: hard climb, then town.",
   },
   {
     title: "You keep the land. The town brings the mandate.",
@@ -114,7 +113,7 @@ export const operations = [
   },
   {
     title: "Seasonal hours",
-    body: "Dawn-to-afternoon in summer; shorter winter windows if ice allows, or a winter closure that protects the mountain and the brand.",
+    body: "Dawn-to-afternoon in the shoulder and summer. Closed for ski operations in winter.",
   },
   {
     title: "Stewardship funding",
@@ -141,7 +140,7 @@ export const timeline = [
   {
     phase: "Raise",
     title: "Community capital",
-    body: "A $750,000 first-slice campaign: $500 name-a-step, $10,000 founding sponsors, funds released only on permit and construction milestones.",
+    body: "A $50,000 seed study — survey, siting, a Council packet — not timber. Construction money comes later, and only into a restricted fund.",
   },
   {
     phase: "Build",
