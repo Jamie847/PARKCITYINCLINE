@@ -51,7 +51,7 @@ function Hero() {
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-forest/55 to-gold/25" />
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-20 pt-28 sm:px-6">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-20 pt-32 sm:px-6">
         <p className="inline-flex w-fit rounded-full bg-gold px-3 py-1 text-xs font-semibold tracking-wide text-ink uppercase">
           {site.badge}
         </p>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BriefPage() {
   return (
-    <article className="bg-snow pt-24 text-forest">
+    <article className="bg-snow pt-28 text-forest">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <p className="text-xs tracking-[0.22em] text-light uppercase">
           Park City Incline · Stakeholder briefing

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { nav, site } from "@/lib/site";
+import { BrandLogo } from "@/components/brand-logo";
+import { nav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -36,13 +37,14 @@ export function SiteHeader() {
         open && "site-header-open",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/#top"
-          className="font-display text-lg text-current sm:text-xl"
+          className="rounded-md shadow-[0_1px_8px_rgba(18,53,44,0.18)] ring-1 ring-black/5"
           onClick={() => setOpen(false)}
+          aria-label="Park City Incline home"
         >
-          {site.name}
+          <BrandLogo size="header" priority className="rounded-md" />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {nav.map((item) => (
