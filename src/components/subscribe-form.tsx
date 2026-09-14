@@ -32,7 +32,7 @@ export function SubscribeForm() {
       setStatus("done");
       setMessage(
         data.stored === false
-          ? "Received here — the mailing list is not connected yet, so this address was not stored. Check back, or write hello@parkcityincline.com."
+          ? "Received here — the list is not connected yet, so this address was not stored. Write hello@parkcityincline.com if you want to be counted now."
           : "",
       );
     } catch (error) {

@@ -16,20 +16,71 @@ export async function POST(request: Request) {
     );
   }
 
+  const list = body?.list || "PCI Launch";
+  const sheet = await writeToSheet(email, list);
+  const mailchimp = await writeToMailchimp(email, list);
+
+  if (sheet.stored || mailchimp.stored) {
+    return NextResponse.json({
+      ok: true,
+      stored: true,
+      already: Boolean(sheet.already || mailchimp.already),
+    });
+  }
+
+  if (sheet.error || mailchimp.error) {
+    return NextResponse.json(
+      { ok: false, error: sheet.error || mailchimp.error },
+      { status: 502 },
+    );
+  }
+
+  console.warn(
+    "[subscribe] No Google Sheet webhook or Mailchimp keys — address accepted but NOT stored:",
+    email,
+  );
+  return NextResponse.json({ ok: true, stored: false });
+}
+
+async function writeToSheet(email: string, list: string) {
+  const url = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  if (!url) return { stored: false };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        list,
+        source: "parkcityincline.com",
+      }),
+    });
+    const payload = (await response.json().catch(() => null)) as {
+      ok?: boolean;
+      already?: boolean;
+      error?: string;
+    } | null;
+
+    if (!response.ok || !payload?.ok) {
+      return {
+        stored: false,
+        error: payload?.error || "The signup sheet could not add that address.",
+      };
+    }
+
+    return { stored: true, already: Boolean(payload.already) };
+  } catch {
+    return { stored: false, error: "The signup sheet did not respond." };
+  }
+}
+
+async function writeToMailchimp(email: string, list: string) {
   const apiKey = process.env.MAILCHIMP_API_KEY;
   const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
   const server = process.env.MAILCHIMP_SERVER_PREFIX;
-
-  if (!apiKey || !audienceId || !server) {
-    // Accept the address so the form still works, but say plainly that
-    // nothing was stored — otherwise a smoke test passes while every
-    // signup is silently dropped.
-    console.warn(
-      "[subscribe] Mailchimp env vars missing — address accepted but NOT stored:",
-      email,
-    );
-    return NextResponse.json({ ok: true, stored: false });
-  }
+  if (!apiKey || !audienceId || !server) return { stored: false };
 
   const response = await fetch(
     `https://${server}.api.mailchimp.com/3.0/lists/${audienceId}/members`,
@@ -42,7 +93,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         email_address: email,
         status: "subscribed",
-        tags: [body?.list || "PCI Launch"],
+        tags: [list],
       }),
     },
   );
@@ -52,13 +103,10 @@ export async function POST(request: Request) {
       title?: string;
     } | null;
     if (payload?.title === "Member Exists") {
-      return NextResponse.json({ ok: true, already: true, stored: true });
+      return { stored: true, already: true };
     }
-    return NextResponse.json(
-      { ok: false, error: "Mailchimp could not add that address." },
-      { status: 502 },
-    );
+    return { stored: false, error: "Mailchimp could not add that address." };
   }
 
-  return NextResponse.json({ ok: true, stored: true });
+  return { stored: true };
 }
