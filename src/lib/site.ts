@@ -5,9 +5,9 @@ export const site = {
   badge: "A community campaign · Park City, Utah",
   heroHeadline: "The Park City Incline",
   heroSubhead:
-    "This is a community campaign to build a free outdoor staircase on a Park City hillside — the same idea as Colorado’s Manitou Incline. Not a gondola. Not a ticket. A public climb locals use at dawn and visitors finish hungry in town.",
+    "We want to build a free public staircase up a Park City hillside — Colorado’s Manitou Incline, but here.",
   heroAsk:
-    "Add your name. A list Council can see is how this becomes a $50,000 siting study — not a finished staircase, and not a corridor this website is picking.",
+    "Locals climb it at dawn. Visitors finish it and walk into town hungry.",
   description:
     "A community campaign for a free outdoor staircase in Park City — the same idea as Colorado’s Manitou Incline. Add your name so Council can see the study is worth doing.",
   ogTitle: "Park City Incline — A free climb for our mountain town",
@@ -20,7 +20,7 @@ export const site = {
     { href: "#support", label: "Add your name" },
   ],
   mission:
-    "A community campaign for a free public step trail in Park City. Not an official City or Vail Resorts project. The website is not picking the corridor.",
+    "A community campaign for a free public step trail in Park City. Not an official City or Vail Resorts project. This site isn’t picking a location.",
   contactEmail: "hello@parkcityincline.com",
   goFundMeUrl: process.env.NEXT_PUBLIC_GOFUNDME_URL ?? "",
   goFundMeName: "Build the Park City Incline",
@@ -31,7 +31,7 @@ export const story = [
     id: "what",
     kicker: "What",
     title: "A public staircase on the mountain.",
-    body: "Not a gondola. Not a ticketed attraction. A purpose-built step trail — two lanes so people can go up and down, free in the seasons the mountain is not skiing.",
+    body: "A purpose-built step trail with two lanes, one up and one down. Free to climb whenever the mountain isn’t open for skiing.",
   },
   {
     id: "why",
@@ -43,13 +43,12 @@ export const story = [
     id: "where",
     kicker: "Where",
     title: "Five corridors. You help decide.",
-    body: "The steepest ground is not next to town. The ground next to town is not the steepest. PCMR finishes toward Main Street. Olympic Park is the biggest climb — if the land is even available. Adding your name is how that constituency shows up. This website is not picking the corridor.",
+    body: "We’re looking at five possible locations: Park City Mountain Village, Canyons Village, Deer Valley Snow Park, Deer Valley East at Jordanelle, and Utah Olympic Park. The spots closest to town may not have the long, steep vertical a Manitou-scale climb needs, while the steepest ground sits farther out. We’ll have fun exploring which one makes the most sense for our community.",
   },
 ] as const;
 
 export const stats = [
   { value: "1,100–1,600 ft", label: "Vertical, by corridor" },
-  { value: "Set by survey", label: "Step count" },
   { value: "Free", label: "No ticket. Ever." },
   { value: "3 seasons", label: "Closed for ski ops" },
 ] as const;
@@ -95,7 +94,7 @@ export const designFeatures = [
   },
   {
     title: "Start at the Village",
-    body: "Payday sits on Vail terrain above Mountain Village. Guest parking and food are already at the doorstep. We are asking to share it.",
+    body: "Payday, a ski run above Park City Mountain Village, sits on land operated by Vail Resorts. Guest parking and food are already at the base. We’re asking to share it.",
   },
 ] as const;
 
@@ -152,7 +151,7 @@ export const economyReasons = [
   },
   {
     title: "Manitou is throttled. We would not have to be.",
-    body: "The original is one lane up, walk down Barr Trail, reservation required. July still cleared 48,000 climbs. Two purpose-built lanes, existing base lots, and no neighborhood street fight are why similar numbers are a fair working theory — not a Park City forecast, and not a promise that ours would be larger.",
+    body: "The original is one lane up, walk down Barr Trail, reservation required. July still cleared 48,000 climbs. Two purpose-built lanes, existing base lots, and no neighborhood street fight are why similar numbers are a fair working theory — not a promise.",
   },
   {
     title: "The spend is after the last step",
@@ -170,12 +169,12 @@ export const eventIdeas = [
     body: "Colorado Springs closes the Incline one morning a year for a Firefighter Climb on 9/11. Park City could host the same — plus school, nonprofit, and wounded-warrior days — without turning the trail into a ticketed carnival.",
   },
   {
-    title: "First-snow to last-dirt",
+    title: "Snowmelt to first snow",
     body: "The stairs would be a three-season product. Winter belongs to ski operations. That is a cleaner first conversation with the resort than claiming a year-round lane on a ski run.",
   },
   {
     title: "2034 and the FKT crowd",
-    body: "Manitou is a known workout for Olympic and endurance athletes. Fastest-known-time culture, college teams, and a 2034 training story are events that do not need a finish-line arch on Main Street.",
+    body: "Manitou is a known workout for Olympic and endurance athletes. Fastest-known-time (FKT) chasers, college teams, and athletes training for the 2034 Salt Lake City Winter Olympics are all natural users, and none of them need a finish-line arch on Main Street.",
   },
 ] as const;
 
@@ -239,11 +238,11 @@ export const questions = [
   },
   {
     title: "Who pays? Is there a ticket?",
-    body: "No tickets. Seed money is a $50,000 study — survey, siting, a Council packet — not timber. The later build is a $2–5 million capital range. There is not yet a 501(c)(3) or a restricted fund to hold donations. That is still unsettled.",
+    body: "No tickets, ever. The first step is a siting study — a survey, route options, and a report for Park City Council — before anything gets built. A full build is estimated in the $2–5 million range. There isn’t yet a 501(c)(3) or a dedicated fund to hold donations; that’s still being set up.",
   },
   {
     title: "Who are you, and who owns the land?",
-    body: "A community campaign. Not a 501(c)(3) yet, and not a City or Vail announcement. Payday is Vail terrain. Nothing is built until they, and the City, say the conversation is real.",
+    body: "A community campaign. Not a 501(c)(3) yet, and not a City or Vail announcement. Payday is on land operated by Vail Resorts. Nothing gets built unless Vail and the City agree it’s worth pursuing.",
   },
 ] as const;
 

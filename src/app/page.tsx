@@ -98,7 +98,7 @@ function Hero() {
           ))}
         </nav>
         <p className="mt-5 max-w-lg text-sm leading-6 text-snow/75">
-          Not a City project. Not a Vail announcement. The only ask right now
+          Not a City project or a Vail announcement — the only ask right now
           is your email.
         </p>
       </div>
@@ -135,7 +135,7 @@ function Story() {
             </article>
           ))}
         </div>
-        <div className="mt-10 grid gap-3 rounded-[1.6rem] bg-forest px-5 py-8 text-snow sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+        <div className="mt-10 grid gap-3 rounded-[1.6rem] bg-forest px-5 py-8 text-snow sm:grid-cols-3 sm:px-8">
           {stats.map((item) => (
             <div key={item.label}>
               <p className="font-display text-4xl text-gold">{item.value}</p>
@@ -144,9 +144,9 @@ function Story() {
           ))}
         </div>
         <p className="mt-4 text-center text-sm text-ink/55">
-          Vertical and step count are set by survey. The climb we want is
-          still a 45-minute to two-hour sufferfest — then the town at the
-          bottom. Which town is the siting question.
+          Exact vertical and step count depend on the final route. Either way,
+          it’s a 45-minute to two-hour climb, followed by a meal in whichever
+          town sits at the bottom.
         </p>
       </div>
     </section>
@@ -251,9 +251,9 @@ function Why() {
           Why Park City should have one.
         </h2>
         <p className="mt-5 max-w-2xl text-base leading-8 text-ink/70">
-          This is not a theme-park ride. It is the outdoor equivalent of a
-          public library: hard to use, free to enter, and good for the town
-          that hosts it.
+          This isn’t a theme-park ride. It’s the outdoor equivalent of a
+          public trail: strenuous, free to use, and good for the town that
+          hosts it.
         </p>
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
           <figure className="overflow-hidden rounded-[1.6rem]">
@@ -283,7 +283,8 @@ function Why() {
             </div>
             <figcaption className="mt-2 text-sm text-ink/55">
               A town at the bottom already knows what to do with a tired
-              crowd. Main Street is the PCMR case — not the only finish.
+              crowd. A climb at Park City Mountain would finish near Main
+              Street, but that’s only one of the options.
             </figcaption>
           </figure>
         </div>
@@ -318,7 +319,7 @@ function Economy() {
     <section id="economy" className="scroll-mt-24 bg-forest px-4 py-20 text-snow sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-semibold tracking-[0.2em] text-gold uppercase">
-          Not an expense
+          The economic case
         </p>
         <h2 className="font-display mt-3 max-w-3xl text-4xl sm:text-5xl">
           Manitou’s staircase is a visitor machine. Park City still needs its
@@ -326,7 +327,8 @@ function Economy() {
         </h2>
         <p className="mt-5 max-w-3xl text-base leading-8 text-snow/80">
           A town of about 5,000 people hosts a free climb that their tourism
-          bureau puts at 250,000 visitors a year. City trail counters logged
+          bureau puts at 250,000 visitors a year. Manitou Springs trail
+          counters logged
           about 197,000 climbs in the first seven months of 2025 — 48,645 in
           July alone. Those are Manitou’s numbers, with one uphill lane and a
           daily cap. They are not a Park City forecast. They are the proof that
@@ -547,16 +549,8 @@ function Support() {
           Add your name.
         </h2>
         <p className="mt-4 text-base leading-8 text-ink/80">
-          This website is not choosing the corridor. Signers are the
-          constituency that makes a study possible. Tell Council the
-          conversation is worth scoping. Seed money is $50,000 for that study
-          — survey, siting, a Council packet — not timber. There is not yet a
-          501(c)(3) or a restricted fund, and Park City Community Foundation
-          is not lined up. That home still has to be built.{" "}
-          <Link href="/brief" className="font-semibold underline underline-offset-4">
-            See the budget
-          </Link>
-          .
+          This website isn’t choosing the location. Every name added shows
+          Park City Council there’s real local interest in studying the idea.
         </p>
         <div className="mt-8">
           <SubscribeForm />

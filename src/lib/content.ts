@@ -140,7 +140,7 @@ export const timeline = [
   {
     phase: "Raise",
     title: "Community capital",
-    body: "A $50,000 seed study — survey, siting, a Council packet — not timber. Construction money comes later, and only into a restricted fund.",
+    body: "A siting study — survey, route options, and a Council packet — not timber. Construction money comes later, and only into a restricted fund.",
   },
   {
     phase: "Build",
